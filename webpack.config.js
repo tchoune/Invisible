@@ -11,6 +11,7 @@ const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
 let config = {
     entry: ['./src/index.js', './src/style/css.scss'],
     output:{
+        filename : 'main.js',
         path : path.resolve('./public')
     },
     resolve: {
@@ -43,10 +44,20 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', "sass-loader"],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 
+                    {loader: 'postcss-loader', options: { postcssOptions: {plugins: function () {return [require('autoprefixer')];}}}},
+                    "sass-loader"],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(MP4|webm|ogv|avi|ogg)$/i,
                 type: 'asset/resource',
             },
         ]
