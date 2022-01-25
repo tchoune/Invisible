@@ -3,11 +3,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-
-const env = process.env.NODE_ENV ? process.env.NODE_ENV : 'development'
-
-
-
 let config = {
     entry: ['./src/index.js', './src/style/css.scss'],
     output:{
@@ -84,23 +79,30 @@ let config = {
     ]
 }
 
-if (env === 'production'){
-    config.watch = false
-    config.plugins.push(
-        new BundleAnalyzerPlugin({
-            openAnalyzer : false,
-            defaultSizes :'gzip',
-            analyzerMode : 'static'
-        })
-    )
-}
-else{
-    config.plugins.push(
-        new BundleAnalyzerPlugin({
-            openAnalyzer : false,
-            defaultSizes :'gzip'
-        })
-    )
-}
+module.exports = (env, args) =>{
+    config.mode = args.mode
 
-module.exports = config;
+    if (args.mode === 'development'){
+        config.devtool = 'source-map'
+        config.plugins.push(
+            new BundleAnalyzerPlugin({
+                openAnalyzer : false,
+                defaultSizes :'gzip'
+            })
+        )
+    }
+
+    if(args.mode === 'production'){
+        config.devtool = false
+        config.watch = false
+        config.plugins.push(
+            new BundleAnalyzerPlugin({
+                openAnalyzer : false,
+                defaultSizes :'gzip',
+                analyzerMode : 'static'
+            })
+        )
+    }
+
+    return config;
+}
