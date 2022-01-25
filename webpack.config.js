@@ -36,17 +36,32 @@ let config = {
             {
                 test : /\.js$/,
                 exclude: /node_modules/,
-                use:['babel-loader'],
+                use:{
+                    loader : 'babel-loader',
+                },
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                use: [
+                    {loader : 'style-loader'},
+                    {loader : 'css-loader'},
+                ]
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 
-                    {loader: 'postcss-loader', options: { postcssOptions: {plugins: function () {return [require('autoprefixer')];}}}},
-                    "sass-loader"],
+                use: [
+                    {loader : MiniCssExtractPlugin.loader},
+                    {loader : 'css-loader'},
+                    {loader : 'postcss-loader', 
+                        options: { 
+                            postcssOptions: {
+                                plugins: function () {
+                                    return [require('autoprefixer')];
+                                }
+                            }
+                        }
+                    },
+                    {loader : 'sass-loader'}],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
