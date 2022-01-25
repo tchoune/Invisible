@@ -44,19 +44,7 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                use: [
-                    {loader : MiniCssExtractPlugin.loader},
-                    {loader : 'css-loader'},
-                    {loader : 'postcss-loader', 
-                        options: { 
-                            postcssOptions: {
-                                plugins: function () {
-                                    return [require('autoprefixer')];
-                                }
-                            }
-                        }
-                    },
-                    {loader : 'sass-loader'}],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
