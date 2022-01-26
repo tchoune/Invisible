@@ -2,15 +2,16 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
-    /* plus besoins 
-    entry: ['./src/index.js', './src/style/css.scss'],*/
+    entry: './src/index.js',
     output:{
         filename : 'main.js',
-        path : path.resolve('./public'),
+		path: path.resolve(__dirname, 'public'),
     },
     resolve: {
+		extensions: ['.js', '.jsx'],
         alias:{
             "@" : path.resolve("./src/"),
             "@css" : path.resolve("./src/style/"),
@@ -30,7 +31,7 @@ let config = {
     module : {
         rules:[
             {
-                test : /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use:{
                     loader : 'babel-loader',
@@ -64,6 +65,7 @@ let config = {
     plugins:[
         new MiniCssExtractPlugin({}),
         new ESLintPlugin({}),
+		new HtmlWebpackPlugin({template : './public/index.html'}),
         
     ]
 }
