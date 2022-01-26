@@ -4,10 +4,11 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let config = {
-    entry: ['./src/index.js', './src/style/css.scss'],
+    /* plus besoins 
+    entry: ['./src/index.js', './src/style/css.scss'],*/
     output:{
         filename : 'main.js',
-        path : path.resolve('./public')
+        path : path.resolve('./public'),
     },
     resolve: {
         alias:{
