@@ -65,7 +65,7 @@ let config = {
     plugins:[
         new MiniCssExtractPlugin({}),
         new ESLintPlugin({}),
-		new HtmlWebpackPlugin({template : './public/index.html'}),
+		new HtmlWebpackPlugin({template : './public/index.html', title : 'One-Admin - Votre partenaire de confiance', minify : false}),
         
     ]
 }
