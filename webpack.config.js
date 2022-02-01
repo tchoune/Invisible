@@ -9,24 +9,15 @@ let config = {
     output:{
         filename : 'main.js',
 		path: path.resolve(__dirname, 'public'),
+        assetModuleFilename: 'images/[name].[ext]',
     },
     resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.png', 'jpg'],
         alias:{
             "@" : path.resolve("./src/"),
             "@css" : path.resolve("./src/style/"),
             "@image": path.resolve("./src/images/")
         }
-    },
-    devServer:{
-        static:{
-            directory: path.resolve("./public")
-        },
-        client:{
-            logging: 'warn',
-            overlay : true
-        },
-        port: 8080,
     },
     module : {
         rules:[
@@ -74,7 +65,20 @@ module.exports = (env, args) =>{
     config.mode = args.mode
 
     if (args.mode === 'development'){
-        config.devtool = 'source-map'
+        config.devtool = 'inline-source-map',
+
+        config.devServer ={
+            static:{
+                directory: path.resolve("./public")
+            },
+            client:{
+                logging: 'warn',
+                overlay : true
+            },
+            historyApiFallback : true,
+            compress : true,
+            port: 8080,
+        },
         config.plugins.push(
             new BundleAnalyzerPlugin({
                 openAnalyzer : false,
