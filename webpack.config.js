@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+
 
 let config = {
     entry: './src/index.js',
@@ -12,7 +14,7 @@ let config = {
         assetModuleFilename: 'images/[name].[ext]',
     },
     resolve: {
-		extensions: ['.js', '.jsx', '.png', 'jpg'],
+		extensions: ['.js', '.jsx', '.png', '.jpg'],
         alias:{
             "@" : path.resolve("./src/"),
             "@css" : path.resolve("./src/style/"),
@@ -57,7 +59,10 @@ let config = {
         new MiniCssExtractPlugin({}),
         new ESLintPlugin({}),
 		new HtmlWebpackPlugin({template : './public/index.html', title : 'One-Admin - Votre partenaire de confiance', minify : false}),
-        
+        // Load .env file for environment variables in JS
+        new Dotenv({
+            path: "./.env"
+        }),
     ]
 }
 
