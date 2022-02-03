@@ -5,20 +5,22 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
-
 let config = {
+
     entry: './src/index.js',
+
     output:{
-        filename : 'main.js',
-		path: path.resolve(__dirname, 'public'),
+        filename : 'js/main.js',
+		path: path.resolve(__dirname, './public'),
         assetModuleFilename: 'images/[name].[ext]',
     },
     resolve: {
-		extensions: ['.js', '.jsx', '.png', '.jpg'],
+		extensions: ['.js', '.jsx', '.png', '.jpg', '.mp4', '.gif'],
         alias:{
             "@" : path.resolve("./src/"),
             "@css" : path.resolve("./src/style/"),
-            "@image": path.resolve("./src/images/")
+            "@images": path.resolve("./src/images/"),
+            "@videos": path.resolve("./src/videos/"),
         }
     },
     module : {
@@ -50,15 +52,18 @@ let config = {
                 type: 'asset/resource',
             },
             {
-                test: /\.(MP4|webm|ogv|avi|ogg)$/i,
+                test: /\.(mp4|webm|ogv|avi|ogg)$/i,
                 type: 'asset/resource',
             },
         ]
     },
     plugins:[
-        new MiniCssExtractPlugin({}),
+        new MiniCssExtractPlugin({
+            filename: "css/[name].css",
+            chunkFilename: "[id].css"
+        }),
         new ESLintPlugin({}),
-		new HtmlWebpackPlugin({template : './public/index.html', title : 'One-Admin - Votre partenaire de confiance', minify : false}),
+		new HtmlWebpackPlugin({template : './src/index.html', title : 'One-Admin - Votre partenaire de confiance', minify : false}),
         // Load .env file for environment variables in JS
         new Dotenv({
             path: "./.env"
