@@ -5,6 +5,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
+let titlePage = 'One-Admin - Votre partenaire de confiance'
+
+
 let config = {
 
     entry: './src/index.js',
@@ -63,7 +66,6 @@ let config = {
             chunkFilename: "[id].css"
         }),
         new ESLintPlugin({}),
-		new HtmlWebpackPlugin({template : './src/index.html', title : 'One-Admin - Votre partenaire de confiance', minify : false}),
         // Load .env file for environment variables in JS
         new Dotenv({
             path: "./.env"
@@ -79,7 +81,7 @@ module.exports = (env, args) =>{
 
         config.devServer ={
             static:{
-                directory: path.resolve("./public")
+                directory: path.resolve("./src")
             },
             client:{
                 logging: 'warn',
@@ -93,7 +95,12 @@ module.exports = (env, args) =>{
             new BundleAnalyzerPlugin({
                 openAnalyzer : false,
                 defaultSizes :'gzip'
-            })
+            }),
+            new HtmlWebpackPlugin({
+                template : './src/index.html', 
+                title : titlePage + " DEV", 
+                minify : false
+            }),
         )
     }
 
@@ -105,7 +112,12 @@ module.exports = (env, args) =>{
                 openAnalyzer : false,
                 defaultSizes :'gzip',
                 analyzerMode : 'static'
-            })
+            }),
+            new HtmlWebpackPlugin({
+                template : './src/index.html', 
+                title : titlePage, 
+                minify : true
+            }),
         )
     }
 
