@@ -1,4 +1,5 @@
 /*************variables***********/
+@import url("https://use.typekit.net/rps3mnw.css");
 
 $bg-presentation : rgb(230, 227, 227);
 $bg-teams : rgb(0, 0, 0);
@@ -14,11 +15,16 @@ $bg-teams : rgb(0, 0, 0);
 }
 
 :root{
-    --bg-color: #fff;
+    --bg-color: #FFF;
 }
 body {
     max-width: 100%;
+    font-family: futura-pt;
 }
+
+
+
+
 
 img {
     width: 100%;
@@ -42,6 +48,34 @@ header{
   font-family: 'Maitree', serif;
 }
 
+
+/*************MENU***************/
+
+nav{
+    display : flex;
+    justify-content: flex-end;
+    position: fixed;
+    height: 75px;
+    width: 100%;
+
+    padding-right: 5%;
+    padding-top : 5%;
+
+    z-index: 10;
+    & img {
+        width: 35px;
+        height: 35px;
+    }
+
+    & .linkList {
+        display : none;
+        list-style-type: none;
+    }
+
+}
+
+
+
 h1{
     font-size: 3em;
     font-weight: normal;
@@ -55,7 +89,7 @@ h1{
     position: relative;
     overflow: hidden;
     display: block;
-    line-height: 1.2;
+    line-height: 1;
     align-self:flex-end;
 }
 
@@ -130,6 +164,10 @@ h1{
     height: 40vh;
     background-color: $bg-presentation;
     padding : 50px 20px;
+
+    & p{
+        font-size: 22px;
+    }
 }
 
 .about div {
@@ -137,7 +175,7 @@ h1{
 }
 
 .services{
-    margin-top : 10vh;
+    margin-top : 7vh;
     padding : 0 20px;
     & h1 {
         font-size: 22px;
@@ -147,7 +185,7 @@ h1{
     .service-content{
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        height: 95vh;
 
 
         & div {
@@ -176,7 +214,7 @@ h1{
 
             &:nth-child(3) img{
 
-                width: 50%;
+                width: 67%;
             }
         } 
     }
@@ -188,16 +226,24 @@ h1{
     flex-wrap: wrap;
     gap : 50px;
     align-items: center;
-
-    padding : 20vh 20px 25vh 20px;
-    padding-top : 20vh;
+    padding : 15vh 25px 25vh 25px;
 
     background: $bg-teams;
+
+    & .portrait > div:first-child{
+        display : flex;
+        flex-direction: column;
+        height: 970px;
+
+        & img{
+            width: 95%;
+        }
+    }
 
     & div {
         display : flex; 
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         align-items: center;
     }
 
@@ -205,10 +251,11 @@ h1{
         font-weight: initial;
         color : white;
         font-size: 19px;
+        text-align: justify;
 
         & .big{
-            font-size: 45px;
-            font-weight: 800;
+            font-size: 40px;
+            font-weight: 700;
         }
 
         & .medium{
@@ -217,56 +264,122 @@ h1{
         }
 
         & .small{
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
         }
     }
-    & img {
-        width: 95%;
-    }
+
 
     & .portrait:last-child > div:last-child{
+        padding-bottom : 30px;
         border-bottom: 20px solid white;
     }   
 }
 
 
-
-
-.precontact{
-    background: url(../images/oeil.png);
-    background-repeat: repeat;
-    background-size: 50px 50px;
-    background-position: -37px -45px;
-    height: 70vh;
-    padding : 0 15px 10vh 15px;
-
-    display : flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.social{
+    
+    max-width: 100%;
+    display: block;
+    position: static;
+    height: 100vh;
+    background-color: #fff;
+    margin-bottom : 20vh;
 
     & div{
-        display: flex;
+        display : flex;
         flex-direction: column;
-        gap : 15px;
+        gap : 25px;
+        top : -70px;
+        position: relative;
 
-        width: 100%;
-        align-items: center;
-    }
-
-    & h1, p {
-        background:rgb(0, 0, 0);
-        color : white;
-        font-weight: 700;
-    }
-    & h1{
-        font-size : 34px;
+        & a{
+            display : flex;
+            justify-content: center;
+        }
+        & img{
+            width: 75%;
+        }
     }
 }
 
+
+
+
+
+.precontact{
+    //background: url(../images/oeil.png);
+    background-image: url("data:image/svg+xml,%3Csvg id='Calque_1' data-name='Calque 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 49.37 49.37'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%231e1e1c;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3E50px%3C/title%3E%3Cpath class='' d='M25,49.68A24.69,24.69,0,1,1,49.69,25,24.72,24.72,0,0,1,25,49.68ZM25,4.19A20.81,20.81,0,1,0,45.81,25,20.82,20.82,0,0,0,25,4.19Z' transform='translate(-0.32 -0.31)'/%3E%3Cpath class='' d='M25.55,34.56A9.57,9.57,0,1,0,16,25a9.57,9.57,0,0,0,9.57,9.57' transform='translate(-0.32 -0.31)'/%3E%3C/svg%3E");
+
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    background-position: -5px 0;
+    height: 41vh;
+}
+
 .contact{
-    margin-top: 7vh;
+    background: #000;
     display : flex;
-    flex-direction: row;
-    
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 100%;
+    gap : 15px;
+    padding : 5vh 0;
+
+    & div{
+        display : flex;
+        flex-direction: column;
+        width: 92%;
+        height: 25vh;
+        justify-content: space-evenly;
+        text-align: center;
+
+        & span a{
+            font-size: 17px;
+            letter-spacing: 5px;
+            text-decoration: none;
+            padding : 7px;
+            border : 2px solid #fff;
+
+        }
+         
+        & h2 {
+            font-size: 21px;
+        }
+
+        & span a, h2{
+            color : #fff
+        }
+    }
+}
+
+
+footer {
+    max-width: 100%;
+    height: 30vh;
+    display : flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3vh 0;
+
+    &>div:first-child{
+        display : flex;
+        flex-direction: column;
+
+        justify-content: space-evenly;
+
+        
+        width: 170px;
+        height: 170px;
+        border-radius: 100%;
+        border : 3px solid black;
+
+        & a {
+            color : #000;
+            text-decoration: none;
+        }
+    }
 }
