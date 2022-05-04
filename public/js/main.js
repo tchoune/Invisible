@@ -1,1 +1,1 @@
-(()=>{"use strict";window.onload=function(){}})();
+(()=>{"use strict";window.showMenuMobile=function(){var e=document.querySelector("nav");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}})();

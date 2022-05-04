@@ -104,7 +104,7 @@ header{
     font-size: 2.2rem;
     display : flex;
     flex-direction: column;
-    width: 80%;
+    width: 65%;
     position: relative;
 }
 
@@ -127,8 +127,8 @@ header{
     letter-spacing: 8px;
     //width: 55px;
     opacity: 0;
-    -webkit-animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
-    animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+    -webkit-animation: firstWrite 1.8s steps(20, end), blink .5s step-end infinite alternate;
+    animation: firstWrite 1.8s steps(20, end), blink .5s step-end infinite alternate;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     animation-direction: normal;
@@ -138,10 +138,10 @@ header{
     letter-spacing: 9px;
     //width: 55px;
     opacity: 0;
-    -webkit-animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
-    animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
-    -webkit-animation-delay: 4s;
-    animation-delay: 4s;
+    -webkit-animation: firstWrite 3s steps(20, end), blink .5s step-end infinite alternate;
+    animation: firstWrite 3s steps(20, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     animation-direction: normal;
@@ -229,10 +229,10 @@ header{
     padding : 50px 20px;
 
     & p{
-        font-size: 30px;
-        font-weight: bold;
-        font-family: futura-pt-bold;
-        text-align: justify;
+        font-weight: 0;
+        font-size: 40px;
+        font-weight: initial;
+        font-family: futura-pt;
         hyphens: auto;
     }
 }
@@ -249,8 +249,9 @@ header{
     
     & h1 {
         font-size: 22px;
-        font-weight: 1000;
-        font-family: futura-pt-medium;
+        font-family: futura-pt-bold;
+        font-weight: bold;
+        letter-spacing: 5px;
     }
 
 
@@ -270,11 +271,13 @@ header{
                 writing-mode: vertical-rl;
                 transform: rotate(180deg);
                 padding : 10px 7px 0px 7px;
+                letter-spacing: .8px;
             }
 
-            &:nth-child(1) img{
+            &:nth-child(1) img {
                 max-width: 70%;
             }
+
            
             &:nth-child(2) img{
                 max-width: 90%;
@@ -472,14 +475,18 @@ footer {
 
 //FULL SCREEN
 @media screen and (min-width : 790px) {
+    .home-title{
+        width: 50% !important;
+    }
+
     .home-title p{
-        font-size: 5rem;
-        width: 200px !important;
+        font-size: 4rem;
+        width: 150px !important;
     }
 
     .about p{
-        font-size: 50px;
-        padding : 0 7vw;
+        font-size: 78px;
+        padding : 0 12vw;
     }
 
     .services{
