@@ -9,15 +9,16 @@
 
     <body>
     <!-- NAVBAR -->
+    <div class="nav-icone" onclick="showMenuMobile()">&nbsp;</div>
     <nav>
-        <a href="javascript:void(0);" class="nav-icon" onclick="showMenuMobile()">
-            <img src="./images/oeil.png">
-        </a>
+        </div>
+
         <ul class="linkList">
-            <li>ACCUEIL</li>
-            <li>L'AGENCE</li>
-            <li>NOS SERVICES</li>
-            <li>CONTACT</li>
+            <li><a href="/">ACCUEIL</a></li>
+            <li><a href="#agence">L'AGENCE</a></li>
+            <li><a href="#services">NOS SERVICES</a></li>
+            <li><a href="#teams">NOTRE EQUIPE</a></li>
+            <li><a href="#nous-contacter">NOUS CONTACTER</a></li>
         </ul>
     </nav>
 
@@ -32,12 +33,12 @@
     </header>
 
     <main>
-        <section class="about">
+        <section class="about" id="agence">
             <p>Notre agence de communication visuelle «Invisible» vous offre sa vision à 360° pour la réalisation de tous vos projets.<br /><br />
             Entre innovation et adaptation, nous misons sur la différence pour attirer tous les regards et éclipser la concurrence.</p>
         </section>
 
-        <section class="services">
+        <section class="services" id="services">
 
             <h1>NOS SERVICES</h1>
 
@@ -61,7 +62,7 @@
             </div>
         </section>
 
-        <section class="teams">
+        <section class="teams" id="teams">
 
             <div class="portrait">
                     <img src="./images/teams/Julie.jpg" alt="portrait photo de Julie">
@@ -99,7 +100,7 @@
         
         </section>
 
-        <section class="contact">
+        <section class="contact" id="nous-contacter">
             <div>
                 <h2>RENCONTRONS-NOUS ENTRE 4 YEUX !</h2>
                 <span><a href="mailto:info@invisiblecom.ch" alt="Envoyer une email de contact à Invivisble">INFO@INVISIBLECOM.CH</a></span>
