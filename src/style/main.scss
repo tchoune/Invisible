@@ -541,7 +541,6 @@ footer {
         &__cols:nth-child(2){
             width: 50%;
             margin-top :16.6%;
-            //align-items: flex-end;
 
         }
         &__cols:nth-child(2) img{
@@ -549,10 +548,10 @@ footer {
         }
 
         &__cols:nth-child(3){
+            position: relative;
             justify-content: center;
-            //flex-direction: row-reverse;
             width: 35vw;
-            margin-left: 47.4vw;
+            margin-left : 49.7%
 
         }
         &__cols:nth-child(3) img{
