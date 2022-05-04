@@ -1,8 +1,9 @@
 /*************variables***********/
-@import url("https://use.typekit.net/rps3mnw.css");
+@import url("https://use.typekit.net/wcw6wbr.css");
 
 $bg-presentation : rgb(230, 227, 227);
 $bg-teams : rgb(0, 0, 0);
+$bg-color : #fff;
 
 
 /* Basic styles */
@@ -14,40 +15,22 @@ $bg-teams : rgb(0, 0, 0);
   margin: 0;
 }
 
-:root{
-    --bg-color: #FFF;
-}
 body {
     max-width: 100%;
-    font-family: futura-pt;
+    font-family: "futura-pt",sans-serif;
 }
-
-
 
 
 
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
 p{
     font-weight: 700;
     font-size: 14px;
 }
-
-/*******************HEADER **********************/
-
-header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  height: 100vh;
-  color: #000;
-  background-color: var(--bg-color);
-  font-family: 'Maitree', serif;
-}
-
 
 /*************MENU***************/
 
@@ -58,10 +41,12 @@ nav{
     height: 75px;
     width: 100%;
 
-    padding-right: 5%;
-    padding-top : 5%;
-
+    top : 4%;
+    right: 4%;
+    transform: translate(-4%, -4%);
     z-index: 10;
+
+
     & img {
         width: 35px;
         height: 35px;
@@ -74,86 +59,128 @@ nav{
 
 }
 
+/*******************HEADER **********************/
 
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  color: #000;
+  background-color: $bg-color;
+}
 
-h1{
-    font-size: 3em;
-    font-weight: normal;
+.home-title{
+    align-items: flex-end;
+    font-size: 2.2em;
     display : flex;
     flex-direction: column;
     width: 75%;
+    
 }
 
-/* title styles */
-.home-title span{
-    position: relative;
+
+.home-title p{
+    border-right: 2px solid #000;
+    font-weight: 500;
+    font-family: "futura-pt",sans-serif;
+    height: fit-content;
+    white-space: nowrap;
     overflow: hidden;
-    display: block;
-    line-height: 1;
-    align-self:flex-end;
 }
 
-.home-title span::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
-    transform: translateX(-101%);
-}
+  .home-title p:nth-of-type(1) {
+    letter-spacing: 8px;
+    width: 55px;
+    opacity: 0;
+    -webkit-animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+    animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+  
+  .home-title p:nth-of-type(2) {
+    letter-spacing: 9px;
+    width: 55px;
+    opacity: 0;
+    -webkit-animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+    animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 2s;
+    animation-delay: 4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+  
+  .home-title p:nth-of-type(3) {
+    letter-spacing: 10px;
+    width: 55px;
+    opacity: 0;
+    -webkit-animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+    animation: firstWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 4s;
+    animation-delay: 8s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
 
-.home-title span::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color);
-    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
-    transform: translateX(0);
-}
+  .home-title p:nth-of-type(4) {
+    letter-spacing: 8px;
+    width: 55px;
+     opacity: 0;
+     -webkit-animation: lastWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+     animation: lastWrite 4s steps(40, end), blink .5s step-end infinite alternate;
+     -webkit-animation-delay: 4s;
+     animation-delay: 12s;
+     -webkit-animation-fill-mode: forwards;
+     animation-fill-mode: forwards;
+     animation-direction: normal;
+   }
+  
 
-.home-title span:nth-of-type(1)::before,
-.home-title span:nth-of-type(1)::after{
-    animation-delay: 1s;
-}
-
-.home-title span:nth-of-type(2)::before,
-.home-title span:nth-of-type(2)::after{
-    animation-delay: 1.5s;
-}
-.home-title span:nth-of-type(3)::before,
-.home-title span:nth-of-type(3)::after{
-    animation-delay: 2s;
-}
-.home-title span:nth-of-type(4)::before,
-.home-title span:nth-of-type(4)::after{
-    animation-delay: 2.5s;
-}
-
-@keyframes a-ltr-after{
-    0% {transform: translateX(-100%)}
-    100% {transform: translateX(101%)}
-}
-
-@keyframes a-ltr-before{
-    0% {transform: translateX(0)}
-    100% {transform: translateX(200%)}
-}
+  @keyframes firstWrite {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      border-right : none;
+    }
+  }
 
 
-.overlay-main{
-    position: fixed;
-    left : 0;
-    width : 150px;
-    height : 100px;
-    border : 1px solid black;
-    display : none;
-}
+  @keyframes lastWrite {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
+  }
+
+
 
 /********************BODY*********************/
 
@@ -161,51 +188,62 @@ h1{
     display : flex;
     flex-direction : row;
     flex-wrap: wrap;
-    height: 40vh;
+    align-items: center;
+    min-height: 300px;
+    height: 100vh;
     background-color: $bg-presentation;
     padding : 50px 20px;
 
     & p{
-        font-size: 22px;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: futura-pt-bold;
+        text-align: justify;
+        hyphens: auto;
     }
 }
 
-.about div {
-    flex: 1;
-}
+
 
 .services{
-    margin-top : 7vh;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    margin : 7vh 0;
     padding : 0 20px;
+    
     & h1 {
         font-size: 22px;
         font-weight: 1000;
+        font-family: futura-pt-medium;
     }
 
-    .service-content{
+
+
+    &__content{
         display: flex;
         flex-direction: column;
-        height: 95vh;
+        flex-wrap: wrap;
+        max-width: 100%;
 
-
-        & div {
+        .services__cols {
             display : flex;
             flex-direction: row;
-            height: auto;
+            flex: 1;
 
             & p{
                 writing-mode: vertical-rl;
                 transform: rotate(180deg);
-                padding : 0 10px;
+                padding : 10px 7px 0px 7px;
             }
 
             &:nth-child(1) img{
-                float:left;
-                width: 60%;
+                max-width: 70%;
             }
            
             &:nth-child(2) img{
-                width: 95%;
+                max-width: 90%;
             }
 
             &:nth-child(3){
@@ -214,37 +252,44 @@ h1{
 
             &:nth-child(3) img{
 
-                width: 67%;
+                max-width: 60%;
             }
         } 
     }
 }
 
+
+
 .teams{
     display : flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100%;
     gap : 50px;
     align-items: center;
     padding : 15vh 25px 25vh 25px;
+  
 
     background: $bg-teams;
 
-    & .portrait > div:first-child{
+    .portrait{
         display : flex;
         flex-direction: column;
-        height: 970px;
+        gap: 15px;
+        align-items: center;
 
         & img{
             width: 95%;
         }
     }
 
-    & div {
+
+    &__content {
         display : flex; 
         flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        justify-content: space-between;
+        min-height: 850px;
+        height: 100%;
     }
 
     & p{
@@ -278,11 +323,11 @@ h1{
 
 
 .social{
-    
-    max-width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: static;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     margin-bottom : 20vh;
 
@@ -370,8 +415,6 @@ footer {
         flex-direction: column;
 
         justify-content: space-evenly;
-
-        
         width: 170px;
         height: 170px;
         border-radius: 100%;
@@ -383,3 +426,102 @@ footer {
         }
     }
 }
+
+
+// TABLETTE ET PETIT ORDINATEUR
+/*
+@media screen and (min-width : 790px) and (max-width : 1023px) {
+    
+}
+*/
+
+
+//FULL SCREEN
+@media screen and (min-width : 790px) {
+    .about p{
+        font-size: 50px;
+        padding : 0 7vw;
+    }
+
+    .services{
+
+        & h1{
+            padding-left: 5vw;
+            font-size: 35px;
+        }
+        
+        &__content{
+            flex-direction: row;
+            max-width: 1280px;
+            margin : 0 auto;
+        }
+        &__cols{
+            flex: initial !important;
+        }
+
+        &__cols:nth-child(1){
+            flex-direction: row-reverse;
+            width: 50%;
+        }
+        &__cols:nth-child(1) img{
+            max-width: 75% !important;
+        }
+
+        &__cols:nth-child(2){
+            width: 50%;
+            align-self: end;
+
+
+        }
+        &__cols:nth-child(2) img{
+            max-width: 100% !important;
+        }
+
+        &__cols:nth-child(3){
+            flex-direction: row-reverse;
+            width: 100%;
+
+        }
+        &__cols:nth-child(3) img{
+            max-width: 35% !important;
+        }
+        
+    }
+
+    .teams{
+        justify-content: center;
+        .portrait{
+            width: 1080px;
+            flex-direction: row;
+            justify-content: center;
+
+            & img{
+                width: 50%;
+            }
+        }
+
+        &__content {
+            width: 1080px;
+            min-height: 300px;
+            flex-direction: row;
+            
+            & div{
+                width: 48%;
+            }
+        }
+    }
+
+    .social {
+        & div {
+            flex-direction: row;
+            max-width: 1440px;
+            & a {
+                flex : 1;
+            }
+        }
+    }
+
+
+}
+
+
