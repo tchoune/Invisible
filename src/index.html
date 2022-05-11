@@ -14,26 +14,30 @@
         </div>
 
         <ul class="linkList">
-            <li><a href="/#agence">L'AGENCE</a></li>
-            <li><a href="/#services">NOS SERVICES</a></li>
-            <li><a href="/#teams">NOTRE EQUIPE</a></li>
-            <li><a href="/#reseaux">RÉSEAUX SOCIAUX</a></li>
-            <li><a href="/#nous-contacter">NOUS CONTACTER</a></li>
+            <li><a href="javascript: scrollToForm(agence);">L'AGENCE</a></li>
+            <li><a href="javascript: scrollToForm(services);">NOS SERVICES</a></li>
+            <li><a href="javascript: scrollToForm(teams);">NOTRE EQUIPE</a></li>
+            <li><a href="javascript: scrollToForm(socials);">RÉSEAUX SOCIAUX</a></li>
+            <li><a href="javascript: scrollToForm(contact);">NOUS CONTACTER</a></li>
         </ul>
     </nav>
 
     
     <header >
-            <h1 class="home-title"><img src="images/logo.png" alt="Invisible" />
+        <div class="logo">
+            <h1 class="home-title"><img src="images/logo.png" alt="Invisible" /></h1>
+            <div class="subTitle">
                 <p>keep</p>
                 <p>your</p>
                 <p>eyes</p>
-                <p>open</p>
-            </h1>
+                <p>open<p>
+            </div>
+        </div>
+           
     </header>
 
     <main>
-        <section class="about" id="agence">
+        <section class="about reveal-1" id="agence">
             <p>Notre agence de communication visuelle «Invisible» vous offre sa vision à 360° pour la réalisation de tous vos projets.<br /><br />
             Entre innovation et adaptation, nous misons sur la différence pour attirer tous les regards et éclipser la concurrence.</p>
         </section>
@@ -44,16 +48,16 @@
 
             <div class="services__content">
 
-                <div class="services__cols">
+                <div class="services__cols reveal-2">
                     <img src="images/services/Identite.jpg" srcset="" alt="identitié Visuelle" >
                     <p>IDENTITÉ VISUELLE</p>
                 </div>
-                <div class="services__cols">
+                <div class="services__cols reveal-3">
                     <img src="images/services/Print.jpg" alt="communication offline">
                     <P>COMMUNICATION OFFLINE</P>
                 </div>
 
-                <div class="services__cols">
+                <div class="services__cols reveal-4">
                     <img src="images/services/Digital.jpg" alt="communication digitale">
                     <p>COMMINICATION DIGITALE</p>
                 </div>
@@ -65,8 +69,18 @@
         <section class="teams" id="teams">
 
             <div class="portrait">
-                    <img src="./images/teams/Julie.jpg" alt="portrait photo de Julie">
-                    <img src="./images/teams/Kim.jpg" alt="portrait photo de Kim">
+                    <div>
+                        <img src="./images/teams/Julie.jpg" alt="portrait photo de Julie">
+                        <div class="portrait_name">
+                            <p>Julie</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./images/teams/Kim.jpg" alt="portrait photo de Kim">
+                        <div class="portrait_name">
+                            <p>Kim</p>
+                        </div>
+                    </div>
             </div>
             <div class="teams__content">
                 
@@ -85,7 +99,7 @@
                 
         </section>
 
-        <section class="social" id="reseaux">
+        <section class="social" id="socials">
             <div>
                 <a href="#" alt="Lien de notre compte Instagram" ><img src="images/socials/instagram.png" alt="Accéder à notre profil Instagram" /></a>
                 <a href="#" alt="Lien de notre page facebook"> <img src="images/socials/facebook.png" alt="accéder à notre page Facebook" /></a>
@@ -98,7 +112,7 @@
         
         </section>
 
-        <section class="contact" id="nous-contacter">
+        <section class="contact" id="contact">
             <div>
                 <h2>RENCONTRONS-NOUS ENTRE 4 YEUX !</h2>
                 <span><a href="mailto:info@invisiblecom.ch" alt="Envoyer une email de contact à Invivisble">INFO@INVISIBLECOM.CH</a></span>
@@ -109,10 +123,10 @@
     <footer>
         <div>
             <div>
-                <a href="tel:+41789069608"><b>JULIE THONNEY</b><br> 078 906 96 08</a>
+                <a href="tel:+41789069608"><b>JULIE THONNEY</b><br>078 906 96 08</a>
             </div>
             <div>
-                <a href="tel:+41765136456"><b>KIM WEBER</b><br> 076 513 64 56</a>
+                <a href="tel:+41765136456"><b>KIM WEBER</b><br>076 513 64 56</a>
             </div>
         </div>
         <div>
