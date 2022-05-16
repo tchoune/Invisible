@@ -119,43 +119,57 @@ header{
 
 
 .subTitle{
-    width: 100px;
-    transform: translate(72%, -9%);
+    display: inline-block;
+    width: 100%;
+    //transform: translate(72%, -9%);
 }
   
 .subTitle p{
+    font-family: futura pt;
+    font-weight: 700;
     height: fit-content;
-    font-size: 22px;
-    letter-spacing: 15px;
+
+    font-size: 5vw;
+    letter-spacing: 5px;
+
     overflow: hidden;
     white-space: nowrap;
+    padding-left: 55vw;
+
 }
 
 .subTitle p:nth-of-type(1){
-    width: 100%;
+    width: 88%;
     opacity: 0;
     animation: type1 4s steps(15) forwards, blinks .8s 5;
+   // padding-left: 55vw;
   }
   
   .subTitle p:nth-of-type(2){
-    width: 100%;
+    width: 88%;
     opacity: 0;
     animation: type1 4s steps(15) forwards, blinks .8s 5;
     animation-delay: 4s;
+    //padding-left: 55vw;
+
   }
   
   .subTitle p:nth-of-type(3){
-    width: 100%;
+    width: 88%;
     opacity: 0;
     animation: type1 4s steps(15, end) forwards, blinks .8s 5;
     animation-delay: 8s;
+   // padding-left: 55vw;
+
   }
   
   .subTitle p:nth-of-type(4){
-    width: 100%;
+    width: 88%;
     opacity: 0;
     animation: type1 4s steps(15, end) forwards, blinks .8s infinite;
     animation-delay: 12s;
+   // padding-left: 55vw;
+
   }
   
   
@@ -185,7 +199,13 @@ header{
 
   @media screen and (min-width : 900px) {
     .subTitle{
-        transform: translate(100%, -9%);
+        width: 60%;
+    }
+
+    .subTitle p{
+        padding-left: 27.2vw;
+        font-size: 5vw;
+        letter-spacing: 15px;
     }
   }
 
