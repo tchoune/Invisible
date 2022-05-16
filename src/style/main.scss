@@ -33,6 +33,21 @@ p{
     font-size: 14px;
 }
 
+
+/*************OnLoad*************/
+.onLoad{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background: #fff;
+}
+
+
+
 /*************MENU***************/
 
 .nav-icone{

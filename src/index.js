@@ -58,3 +58,15 @@ ScrollReveal().reveal('.reveal-3',{ delay: 400, origin: 'right', distance:'150%'
 ScrollReveal().reveal('.reveal-4', { delay: 500, origin: 'bottom',distance:'150%' });
 
  
+window.addEventListener("DOMContentLoaded", () => {
+    const oeil = document.querySelector(".onLoad");
+
+    oeil.style.display = "flex";
+    document.querySelector("#vOeil").play();
+
+    setTimeout(() => {
+        oeil.style.display = "none";
+        document.querySelector("#vOeil").pause();
+    }, 2000)
+})
+
