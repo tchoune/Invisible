@@ -43,7 +43,7 @@ p{
     width: 100%;
     height: 100vh;
     z-index: 100;
-    background: #fff;
+    background: #FFFFFF;
 }
 
 
@@ -52,7 +52,7 @@ p{
 
 .nav-icone{
     display : block;
-    background: url('../images/oeil.png');
+    background: url('../images/oeil-min.png');
     background-size: cover;
     position: fixed;
 
@@ -136,7 +136,6 @@ header{
 .subTitle{
     display: inline-block;
     width: 100%;
-    //transform: translate(72%, -9%);
 }
   
 .subTitle p{
@@ -150,14 +149,12 @@ header{
     overflow: hidden;
     white-space: nowrap;
     padding-left: 55vw;
-
 }
 
 .subTitle p:nth-of-type(1){
     width: 88%;
     opacity: 0;
     animation: type1 4s steps(15) forwards, blinks .8s 5;
-   // padding-left: 55vw;
   }
   
   .subTitle p:nth-of-type(2){
@@ -165,8 +162,6 @@ header{
     opacity: 0;
     animation: type1 4s steps(15) forwards, blinks .8s 5;
     animation-delay: 4s;
-    //padding-left: 55vw;
-
   }
   
   .subTitle p:nth-of-type(3){
@@ -174,8 +169,6 @@ header{
     opacity: 0;
     animation: type1 4s steps(15, end) forwards, blinks .8s 5;
     animation-delay: 8s;
-   // padding-left: 55vw;
-
   }
   
   .subTitle p:nth-of-type(4){
@@ -183,8 +176,6 @@ header{
     opacity: 0;
     animation: type1 4s steps(15, end) forwards, blinks .8s infinite;
     animation-delay: 12s;
-   // padding-left: 55vw;
-
   }
   
   
@@ -302,8 +293,64 @@ header{
 
                 max-width: 60%;
             }
-        } 
+
+            /****SERVICE CARD 1 ANIMATION TEXT APPARAIT****/
+            &:nth-child(1):hover > .services__content__text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top : 0;
+                right: 0;
+                background-color: #E5847D;
+                width: 75%;
+                height: 100%;
+                z-index: 5;
+                & p{
+                    transform: rotate(0deg);
+                    writing-mode: initial;
+                }
+            }
+            &:nth-child(2):hover > .services__content__text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top : 0;
+                left: 0;
+                background-color: #FFF8A8;
+                width: 100%;
+                height: 100%;
+                z-index: 5;
+                & p{
+                    transform: rotate(0deg);
+                    writing-mode: initial;
+                }
+            }
+            &:nth-child(3):hover > .services__content__text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top : 0;
+                left: 0;
+                background-color: #CDEFFE;
+                width: 95%;
+                height: 100%;
+                z-index: 5;
+                & p{
+                    transform: rotate(0deg);
+                    writing-mode: initial;
+                }
+            }
+        }
+
+        &__text{
+            display : none;
+        }
+
     }
+
 }
 
 
@@ -366,7 +413,6 @@ header{
 
         display : flex; 
         flex-direction: column;
-        //justify-content: space-between;
         min-height: 850px;
         height: 100%;
     }
@@ -432,9 +478,7 @@ header{
 
 
 .precontact{
-    //background: url(../images/oeil.png);
     background-image: url("data:image/svg+xml,%3Csvg id='Calque_1' data-name='Calque 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 49.37 49.37'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%231e1e1c;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3E50px%3C/title%3E%3Cpath class='' d='M25,49.68A24.69,24.69,0,1,1,49.69,25,24.72,24.72,0,0,1,25,49.68ZM25,4.19A20.81,20.81,0,1,0,45.81,25,20.82,20.82,0,0,0,25,4.19Z' transform='translate(-0.32 -0.31)'/%3E%3Cpath class='' d='M25.55,34.56A9.57,9.57,0,1,0,16,25a9.57,9.57,0,0,0,9.57,9.57' transform='translate(-0.32 -0.31)'/%3E%3C/svg%3E");
-
     background-repeat: repeat;
     background-size: 50px 50px;
     background-position: -5px 0;
@@ -513,57 +557,11 @@ footer {
 }
 
 
-/************* ANIMATION APPARITION ********************/
-/*
-.reveal-visible{
-    transform: translate(0px ,0px) !important;
-    opacity: 1 !important;
-    transition: 1s;
-}
-
-.reveal-1{
-    opacity: 0;
-    animation: textAppear 8s forwards;
-}
-.reveal-2{
-    opacity: 0;
-    transform: translateX(-400px);
-}
-
-.reveal-3{
-    opacity: 0;
-    transform: translateX(400px);
-    transition-delay: .3s;
-}
-
-.reveal-4{
-    opacity: 0;
-    transform: translateY(200px);
-}
-
-@keyframes textAppear {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}*/
-
-
-
-
-
 /*************** FULL SCREEN RESPONSIVE *****************/
 @media screen and (min-width : 900px) {
 
     .home-title{
         width: 60% !important;
-    }
-
-    .subTitle p{
-       // font-size: 4rem;
-        //width: 150px !important;
     }
 
     .about{

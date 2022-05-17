@@ -52,6 +52,8 @@ window.addEventListener("DOMContentLoaded", function () {
 */
 
 
+ScrollReveal().reveal('.home-title', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
+ScrollReveal().reveal('.subTitle', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
 ScrollReveal().reveal('.about', {duration: 4000, opacity: 0.0, viewFactor:0.2 });
 ScrollReveal().reveal('.reveal-2', { delay: 300, origin: 'left', distance:'150%' });
 ScrollReveal().reveal('.reveal-3',{ delay: 400, origin: 'right', distance:'150%'});
@@ -68,5 +70,23 @@ window.addEventListener("DOMContentLoaded", () => {
         oeil.style.display = "none";
         document.querySelector("#vOeil").pause();
     }, 2000)
+})
+
+
+
+
+/*Text au survol des images*/
+
+let image1 = document.querySelector('.servicesIdentitie')
+let image2 = document.querySelector('.servicesPrint')
+let image3 = document.querySelector('.servicesDigital')
+
+
+image1.addEventListener("mouseover", () => {
+    let width = image1.clientWidth
+    let height = image1.clientHeight
+
+    
+    console.log("test")
 })
 
