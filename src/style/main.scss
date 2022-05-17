@@ -295,15 +295,15 @@ header{
             }
 
             /****SERVICE CARD 1 ANIMATION TEXT APPARAIT****/
-            &:nth-child(1):hover > .services__content__text {
+            &:nth-child(1):hover .services__content__text {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 position: absolute;
                 top : 0;
-                right: 0;
+                left: 0;
                 background-color: #E5847D;
-                width: 75%;
+                width: 70%;
                 height: 100%;
                 z-index: 5;
                 & p{
@@ -311,7 +311,7 @@ header{
                     writing-mode: initial;
                 }
             }
-            &:nth-child(2):hover > .services__content__text {
+            &:nth-child(2):hover .services__content__text {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -319,7 +319,7 @@ header{
                 top : 0;
                 left: 0;
                 background-color: #FFF8A8;
-                width: 100%;
+                width: 90%;
                 height: 100%;
                 z-index: 5;
                 & p{
@@ -327,15 +327,16 @@ header{
                     writing-mode: initial;
                 }
             }
-            &:nth-child(3):hover > .services__content__text {
+
+            &:nth-child(3):hover .services__content__text{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 position: absolute;
                 top : 0;
-                left: 0;
+                left: 15%;
                 background-color: #CDEFFE;
-                width: 95%;
+                width: 60%;
                 height: 100%;
                 z-index: 5;
                 & p{
@@ -587,7 +588,7 @@ footer {
 
             & p {
                 padding-top : 8px !important;
-                font-size: 25px;
+                font-size: 1.5vw;
                 letter-spacing: 7px !important;
             }
         }
@@ -596,19 +597,34 @@ footer {
         }
 
         &__cols:nth-child(1){
+            height: fit-content;
             flex-direction: row-reverse;
             width: 48%;
+
+            &:hover .services__content__text {
+
+                width: 75% !important;
+                right: 0 !important;
+                left : initial !important;
+            }
         }
         &__cols:nth-child(1) img{
             max-width: 75% !important;
         }
 
         &__cols:nth-child(2){
+            
             width: 50%;
-            margin-top :16.6%;
 
+            &:hover .services__content__text {
+                width: 100% !important;
+                height: 66% !important;
+                top : initial !important;
+                bottom : 0;
+            }
         }
         &__cols:nth-child(2) img{
+            align-self: end;
             max-width: 100% !important;
         }
 
@@ -616,12 +632,23 @@ footer {
             position: relative;
             justify-content: center;
             width: 35vw;
-            margin-left : 49.5%
+            margin-left : 49.5%;
 
+            &:hover .services__content__text {
+                width: 100% !important;
+                left: -4% !important;
+                right: 0;
+
+            }
         }
         &__cols:nth-child(3) img{
             max-width: 100% !important;
     
+        }
+
+        .services__subtitle__text{
+            padding : 0 50px !important;
+            font-size: 2vw;
         }
         
     }
