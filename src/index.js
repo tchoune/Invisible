@@ -21,39 +21,8 @@ window.scrollToForm = (id) => {
 }
 
 
-/*
-const ratio = .9
-
-const option = {
-    root : null,
-    rootMargin : '0px',
-    threshold : 0.9
-}
-
-const handleIntersect = (entries, observer) => {
-    entries.forEach((entry, i) => {
-        if(entry.isIntersecting){
-            console.log(entry.isIntersecting)
-            entry.target.classList.add(`reveal-visible`)
-            observer.unobserve(entry.target)
-        }
-    })
-
-}
-
-window.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver(handleIntersect, option)
-    const targets = document.querySelectorAll('[class*="reveal-"]')
-    console.log(targets)
-    targets.forEach(function (target) {
-      observer.observe(target)
-    })
-  })
-*/
-
-
-ScrollReveal().reveal('.home-title', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
-ScrollReveal().reveal('.subTitle', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
+//ScrollReveal().reveal('.home-title', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
+//ScrollReveal().reveal('.subTitle', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
 ScrollReveal().reveal('.about', {duration: 4000, opacity: 0.0, viewFactor:0.2 });
 ScrollReveal().reveal('.reveal-2', { delay: 300, origin: 'left', distance:'150%' });
 ScrollReveal().reveal('.reveal-3',{ delay: 400, origin: 'right', distance:'150%'});
@@ -77,16 +46,74 @@ window.addEventListener("DOMContentLoaded", () => {
 
 /*Text au survol des images*/
 
-let image1 = document.querySelector('.servicesIdentitie')
-let image2 = document.querySelector('.servicesPrint')
-let image3 = document.querySelector('.servicesDigital')
+let Midentite = document.querySelector('.reveal-2')
+let Mprint = document.querySelector('.reveal-3')
+let Mdigital = document.querySelector('.reveal-4')
 
 
-image1.addEventListener("mouseover", () => {
-    let width = image1.clientWidth
-    let height = image1.clientHeight
 
-    
-    console.log("test")
+let onChangeIdentite = true
+let identite = document.querySelector(".identite2")
+let oldtextIdentite = identite.innerHTML
+
+Midentite.addEventListener("click", () => {
+
+if(onChangeIdentite){
+    identite.innerHTML = oldtextIdentite
+    }else{
+        identite.innerHTML ="<ul><li>MODÉLISATION 3D</li><li>MOTION DESIGN</li> <li>DÉVELOPPEMENT WEB</li> <li>WEB DESIGN</li> <li>CAMPAGNE DIGITALE</li><li>RÉSEAUX SOCIAUX</li></ul>"
+    }
+    onChangeIdentite = !onChangeIdentite
+
 })
+Midentite.addEventListener("mouseleave", () => {
+    identite.innerHTML = oldtextIdentite
+    onChangeIdentite = false
+})
+
+
+
+
+
+
+
+let onChangePrint = true
+let print = document.querySelector(".print2")
+let oldtextPrint = print.innerHTML
+
+Mprint.addEventListener("click", () => {
+    if(onChangePrint){
+        print.innerHTML = oldtextPrint
+    }else{
+        print.innerHTML ="<ul><li>CARTE DE VISITE</li><li>FLYERS</li> <li>PAPIER À LETTRE</li> <li>GOODIES</li> <li>BÂCHE PUBLICITAIRE</li></ul>"
+    }
+    onChangePrint = !onChangePrint
+
+})
+Mprint.addEventListener("mouseleave", () => {
+    print.innerHTML = oldtextPrint
+    onChangePrint = false
+})
+
+
+
+
+let onChangeDigital = true
+let digital = document.querySelector(".digital2")
+let oldtextDigital = digital.innerHTML
+
+Mdigital.addEventListener("click", () => {   
+    if(onChangeDigital){
+        digital.innerHTML = oldtextDigital
+    }else{
+        digital.innerHTML ="<ul><li>LOGO</li><li>CHARTE GRAPHIQUE</li> <li>STRATÉGIE MARKETING</li> <li>STORY-TELLING</li></ul>" 
+    }
+    onChangeDigital = !onChangeDigital
+})
+
+Mdigital.addEventListener("mouseleave", () => {
+    digital.innerHTML = oldtextDigital
+    onChangeDigital = false
+})
+
 
