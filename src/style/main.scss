@@ -368,16 +368,19 @@ header{
                 transform: rotate(180deg);
                 padding : 10px 7px 0px 7px;
                 letter-spacing: .8px;
-            
+                font-family: futura-pt;            
             }
 
             &:nth-child(1) img {
                 max-width: 70%;
+                pointer-events: none;
             }
 
            
             &:nth-child(2) img{
                 max-width: 90%;
+                pointer-events: none;
+
             }
 
             &:nth-child(3){
@@ -387,8 +390,29 @@ header{
             &:nth-child(3) img{
 
                 max-width: 60%;
+                pointer-events: none;
+
             }
 
+            .services__subtitle__text {
+                display: flex;
+                align-items: center;
+                height: 80%;
+
+
+                & ul{
+                    display : flex;
+                    height: 100%;
+                    flex-direction: column;
+                    list-style-type: none;
+                    align-items: center;
+                    justify-content: space-around;
+                }
+
+            }
+            
+            
+            
             /****SERVICE CARD 1 ANIMATION TEXT APPARAIT****/
             &:nth-child(1):hover .services__content__text {
                 display: flex;
@@ -570,10 +594,6 @@ header{
     }
 }
 
-
-
-
-
 .precontact{
     background-image: url("data:image/svg+xml,%3Csvg id='Calque_1' data-name='Calque 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 49.37 49.37'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%231e1e1c;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3E50px%3C/title%3E%3Cpath class='' d='M25,49.68A24.69,24.69,0,1,1,49.69,25,24.72,24.72,0,0,1,25,49.68ZM25,4.19A20.81,20.81,0,1,0,45.81,25,20.82,20.82,0,0,0,25,4.19Z' transform='translate(-0.32 -0.31)'/%3E%3Cpath class='' d='M25.55,34.56A9.57,9.57,0,1,0,16,25a9.57,9.57,0,0,0,9.57,9.57' transform='translate(-0.32 -0.31)'/%3E%3C/svg%3E");
     background-repeat: repeat;
@@ -654,6 +674,9 @@ footer {
 }
 
 
+
+
+
 /*************** FULL SCREEN RESPONSIVE *****************/
 @media screen and (min-width : 900px) {
 
@@ -703,6 +726,8 @@ footer {
         }
         &__cols:nth-child(1) img{
             max-width: 75% !important;
+            pointer-events:initial !important;
+
         }
 
         &__cols:nth-child(2){
@@ -719,6 +744,7 @@ footer {
         &__cols:nth-child(2) img{
             align-self: end;
             max-width: 100% !important;
+            pointer-events:initial !important;
         }
 
         &__cols:nth-child(3){
@@ -736,6 +762,7 @@ footer {
         }
         &__cols:nth-child(3) img{
             max-width: 100% !important;
+            pointer-events:initial !important;
     
         }
 
