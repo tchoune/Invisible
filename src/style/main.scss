@@ -337,10 +337,10 @@ header{
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: hidden;
     margin : 10vh 0;
     padding : 0 20px;
     
+
     & h1 {
         font-size: 22px;
         font-family: futura-pt-bold;
@@ -350,31 +350,42 @@ header{
     }
 
 
+
     &__content{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
 
+
+        //Parent COLLUMNS SERVICES
         .services__cols {
             display : flex;
-            flex-direction: row;
-            flex: 1;
             position: relative;
-
-    
 
             & p{
                 writing-mode: vertical-rl;
                 transform: rotate(180deg);
                 padding : 10px 7px 0px 7px;
                 letter-spacing: .8px;
-            
-            }
+
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                            supported by Chrome, Opera and Firefox */
+            }   
+        }
+
+
+        & div{
+
+            display : flex;
 
             &:nth-child(1) img {
                 max-width: 70%;
             }
-
            
             &:nth-child(2) img{
                 max-width: 90%;
@@ -382,32 +393,39 @@ header{
 
             &:nth-child(3){
                 justify-content: center;
-            }
+                
+                & img{
 
-            &:nth-child(3) img{
-
-                max-width: 60%;
+                    max-width: 60%;
+                }
             }
 
             /****SERVICE CARD 1 ANIMATION TEXT APPARAIT****/
-            &:nth-child(1):hover .services__content__text {
-                display: flex;
+            .services__content__text {
+                
+                display: none;
                 justify-content: center;
                 align-items: center;
-                position: absolute;
-                top : 0;
-                left: 0;
-                background-color: #E5847D;
+    
                 width: 70%;
                 height: 100%;
-                z-index: 5;
+    
+                position: absolute;
+    
+                top : 0;
+                left: 7%;
+    
+                background-color: #E5847D;
+    
                 & p{
                     transform: rotate(0deg);
                     writing-mode: initial;
                 }
             }
-            &:nth-child(2):hover .services__content__text {
-                display: flex;
+
+
+            .services__content__text {
+                display: none;
                 justify-content: center;
                 align-items: center;
                 position: absolute;
@@ -422,9 +440,9 @@ header{
                     writing-mode: initial;
                 }
             }
-
-            &:nth-child(3):hover .services__content__text{
-                display: flex;
+    
+            .services__content__text{
+                display: none;
                 justify-content: center;
                 align-items: center;
                 position: absolute;
@@ -440,14 +458,10 @@ header{
                 }
             }
         }
-
-        &__text{
-            display : none;
-        }
-
     }
-
 }
+
+
 
 
 
@@ -667,6 +681,7 @@ footer {
     }
 
 
+
     .services{
         margin-top : 15vh; 
 
@@ -678,65 +693,80 @@ footer {
         &__content{
             flex-direction: row;
             margin : 0 auto;
+            width : 100%;
 
-            & p {
-                padding-top : 8px !important;
-                font-size: 1.5vw;
-                letter-spacing: 7px !important;
-            }
-        }
-        &__cols{
-            flex: initial !important;
-        }
+        .services__cols:nth-child(1){
+            width: 45%;
+        } 
+        .services__cols:nth-child(2){
+            width: 51%;
+        }   
+        .services__cols:nth-child(3){
+            width: 97.5%;
+        } 
 
-        &__cols:nth-child(1){
-            height: fit-content;
+        .identite_cards{
             flex-direction: row-reverse;
-            width: 48%;
+            height: fit-content;
 
-            &:hover .services__content__text {
+            & img{
+                max-width: 75% !important;
+            }
+
+           .services__content__text {
 
                 width: 75% !important;
                 right: 0 !important;
                 left : initial !important;
             }
         }
-        &__cols:nth-child(1) img{
-            max-width: 75% !important;
-        }
 
-        &__cols:nth-child(2){
-            
-            width: 50%;
-
-            &:hover .services__content__text {
+        .print_cards{
+            align-items: flex-end;
+            & img{
+                
+                max-width: 90% !important;
+            }
+           /* &:hover .services__content__text {
                 width: 100% !important;
                 height: 66% !important;
                 top : initial !important;
                 bottom : 0;
-            }
-        }
-        &__cols:nth-child(2) img{
-            align-self: end;
-            max-width: 100% !important;
+            }*/
         }
 
-        &__cols:nth-child(3){
+        .digital_cards{
             position: relative;
             justify-content: center;
-            width: 35vw;
-            margin-left : 49.5%;
+            margin-left : 31%;
 
-            &:hover .services__content__text {
+            & img{
+                max-width: 52% !important;
+        
+            }
+
+            /*&:hover .services__content__text {
                 width: 100% !important;
                 left: -4% !important;
                 right: 0;
 
-            }
+            }*/
         }
-        &__cols:nth-child(3) img{
-            max-width: 100% !important;
-    
+    }
+        
+
+
+
+        .services__cols{
+
+            //flex: initial !important;
+
+            & p {
+                padding-top : 8px !important;
+                font-size: 1.5vw;
+                letter-spacing: 7px !important;
+            }
+
         }
 
         .services__subtitle__text{

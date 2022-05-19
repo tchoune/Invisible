@@ -45,28 +45,35 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 /*Text au survol des images*/
-
-let Midentite = document.querySelector('.reveal-2')
-let Mprint = document.querySelector('.reveal-3')
-let Mdigital = document.querySelector('.reveal-4')
-
-
-
 let onChangeIdentite = true
 let identite = document.querySelector(".identite2")
 let oldtextIdentite = identite.innerHTML
 
-Midentite.addEventListener("click", () => {
 
-if(onChangeIdentite){
-    identite.innerHTML = oldtextIdentite
-    }else{
-        identite.innerHTML ="<ul><li>MODÉLISATION 3D</li><li>MOTION DESIGN</li> <li>DÉVELOPPEMENT WEB</li> <li>WEB DESIGN</li> <li>CAMPAGNE DIGITALE</li><li>RÉSEAUX SOCIAUX</li></ul>"
-    }
-    onChangeIdentite = !onChangeIdentite
+document.querySelector('.reveal-2').addEventListener("mouseover", () => {
 
+    console.log("test1")
+    document.querySelector('.services__content__text').style.display = 'flex';
+
+    document.querySelector('.reveal-2').addEventListener("click", () => {
+
+        console.log("test2")
+        if(onChangeIdentite){
+            identite.innerHTML = oldtextIdentite
+            }else{
+                identite.innerHTML ="<ul><li>MODÉLISATION 3D</li><li>MOTION DESIGN</li> <li>DÉVELOPPEMENT WEB</li> <li>WEB DESIGN</li> <li>CAMPAGNE DIGITALE</li><li>RÉSEAUX SOCIAUX</li></ul>"
+            }
+            onChangeIdentite = !onChangeIdentite
+        
+        })
 })
-Midentite.addEventListener("mouseleave", () => {
+
+
+
+document.querySelector('.reveal-2').addEventListener("mouseleave", () => {
+    console.log("test3")
+    document.querySelector('.services__content__text').style.display = 'none';
+
     identite.innerHTML = oldtextIdentite
     onChangeIdentite = false
 })
@@ -81,7 +88,7 @@ let onChangePrint = true
 let print = document.querySelector(".print2")
 let oldtextPrint = print.innerHTML
 
-Mprint.addEventListener("click", () => {
+document.querySelector('.reveal-3').addEventListener("click", () => {
     if(onChangePrint){
         print.innerHTML = oldtextPrint
     }else{
@@ -90,7 +97,7 @@ Mprint.addEventListener("click", () => {
     onChangePrint = !onChangePrint
 
 })
-Mprint.addEventListener("mouseleave", () => {
+document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
     print.innerHTML = oldtextPrint
     onChangePrint = false
 })
@@ -102,7 +109,7 @@ let onChangeDigital = true
 let digital = document.querySelector(".digital2")
 let oldtextDigital = digital.innerHTML
 
-Mdigital.addEventListener("click", () => {   
+document.querySelector('.reveal-4').addEventListener("click", () => {   
     if(onChangeDigital){
         digital.innerHTML = oldtextDigital
     }else{
@@ -111,7 +118,7 @@ Mdigital.addEventListener("click", () => {
     onChangeDigital = !onChangeDigital
 })
 
-Mdigital.addEventListener("mouseleave", () => {
+document.querySelector('.reveal-4').addEventListener("mouseleave", () => {
     digital.innerHTML = oldtextDigital
     onChangeDigital = false
 })
