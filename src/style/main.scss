@@ -102,17 +102,25 @@ p{
     width: 100%;
     height: 100vh;
     z-index: 100;
-    background: #ffffff;
+    background: url(../images/invisible_oeil-compressed.gif), #fff;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+@media screen and (min-width : 900px) {
+    .onLoad {
+        background-size: 200px 200px;
+    }
+}
 
 
 /*************MENU***************/
 
 .nav-icone{
     display : block;
-    background: url('../images/oeil-min.png');
-    background-size: cover;
+    //background: url('../images/menu/oeil-min.png');
+    //background-size: 35px 35px;
     position: fixed;
 
     height: 35px;
@@ -130,9 +138,8 @@ p{
     flex-direction: column;
     position: fixed;
     z-index: 11;
-    top : 15%;
-    left :15%;
-    transform: translate(15%, -15%);
+    top : 6%;
+    right :7%;
  }
 
 nav{
@@ -146,8 +153,8 @@ nav{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 50vh;
-        width: 65vw;
+        height: 95vh;
+        width: 100vw;
         background: rgba(3, 3, 3, 0.877);
 
         & li{
@@ -216,6 +223,8 @@ header{
     opacity: 0;
     animation: type1 2s steps(15) forwards, blinks .9s .9s;
     letter-spacing: 7.1px;
+    animation-delay: 2s;
+
   }
   
   .subTitle p:nth-of-type(2){
@@ -223,14 +232,14 @@ header{
     opacity: 0;
     letter-spacing: 7px;
     animation: type1 1s steps(15, end) forwards, blinks .9s .9s;
-    animation-delay: 1.8s;
+    animation-delay: 3.8s;
   }
   
   .subTitle p:nth-of-type(3){
     width: 88%;
     opacity: 0;
     animation: type1 1.3s steps(15, end) forwards, blinks .9s .9s;
-    animation-delay: 2.5s;
+    animation-delay: 4.5s;
     letter-spacing: 7px;
 
   }
@@ -239,7 +248,7 @@ header{
     width: 88%;
     opacity: 0;
     animation: type1 1.3s steps(15, end) forwards, blinks .6s infinite;
-    animation-delay: 3.5s;
+    animation-delay: 5.5s;
     letter-spacing: 5.5px;
 
   }
@@ -283,6 +292,8 @@ header{
     .subTitle p{
         padding-left: 37vw;
         font-size: 4.5vw;
+        line-height: 9vh;
+
     }
 
     .subTitle p:nth-of-type(1){
@@ -355,7 +366,7 @@ header{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-
+        overflow: hidden;
 
         //Parent COLLUMNS SERVICES
         .services__cols {
@@ -363,10 +374,12 @@ header{
             position: relative;
 
             & p{
+                font-family: futura-pt;
                 writing-mode: vertical-rl;
                 transform: rotate(180deg);
                 padding : 10px 7px 0px 7px;
                 letter-spacing: .8px;
+                
 
                 -webkit-touch-callout: none; /* iOS Safari */
                 -webkit-user-select: none; /* Safari */
@@ -384,6 +397,7 @@ header{
             display : flex;
 
             &:nth-child(1) img {
+                
                 max-width: 70%;
             }
            
@@ -401,7 +415,24 @@ header{
             }
 
             /****SERVICE CARD 1 ANIMATION TEXT APPARAIT****/
-            .services__content__text:nth-child(1) {
+
+            .services__subtitle__text{
+                display : flex;
+                justify-content: center;
+                align-items: center;
+
+                & ul {
+                    display : flex;
+                    flex-direction: column;
+                    list-style-type: none;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    height: 100%;
+                }
+            }
+            
+
+            .identite_cards__text {
                 
                 display: none;
                 justify-content: center;
@@ -413,7 +444,7 @@ header{
                 position: absolute;
     
                 top : 0;
-                left: 7%;
+                left: 0;
     
                 background-color: #E5847D;
     
@@ -424,7 +455,7 @@ header{
             }
 
 
-            .services__content__text:nth-child(2) {
+            .print_cards__text {
                 display: none;
                 justify-content: center;
                 align-items: center;
@@ -441,13 +472,13 @@ header{
                 }
             }
     
-            .services__content__text:nth-child(3) {
+            .digital_cards__text {
                 display: none;
                 justify-content: center;
                 align-items: center;
                 position: absolute;
                 top : 0;
-                left: 15%;
+                left: 0;
                 background-color: #CDEFFE;
                 width: 60%;
                 height: 100%;
@@ -712,13 +743,12 @@ footer {
             & img{
                 max-width: 75% !important;
             }
+        }
+        .identite_cards__text {
 
-           .services__content__text {
-
-                width: 75% !important;
-                right: 0 !important;
-                left : initial !important;
-            }
+            width: 75% !important;
+            right: 0 !important;
+            left : initial !important;
         }
 
         .print_cards{
@@ -727,12 +757,12 @@ footer {
                 
                 max-width: 90% !important;
             }
-           /* &:hover .services__content__text {
-                width: 100% !important;
-                height: 66% !important;
-                top : initial !important;
-                bottom : 0;
-            }*/
+        }
+        .print_cards__text {
+            width: 90% !important;
+            height: 64.2% !important;
+            top : initial !important;
+            bottom : 0;
         }
 
         .digital_cards{
@@ -744,13 +774,12 @@ footer {
                 max-width: 52% !important;
         
             }
+        }
+        .digital_cards__text {
+            width: 36% !important;
+            left: initial !important;
+            right: 18%;
 
-            /*&:hover .services__content__text {
-                width: 100% !important;
-                left: -4% !important;
-                right: 0;
-
-            }*/
         }
     }
         
