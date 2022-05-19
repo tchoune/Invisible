@@ -401,7 +401,7 @@ header{
             }
 
             /****SERVICE CARD 1 ANIMATION TEXT APPARAIT****/
-            .services__content__text {
+            .services__content__text:nth-child(1) {
                 
                 display: none;
                 justify-content: center;
@@ -424,7 +424,7 @@ header{
             }
 
 
-            .services__content__text {
+            .services__content__text:nth-child(2) {
                 display: none;
                 justify-content: center;
                 align-items: center;
@@ -441,7 +441,7 @@ header{
                 }
             }
     
-            .services__content__text{
+            .services__content__text:nth-child(3) {
                 display: none;
                 justify-content: center;
                 align-items: center;

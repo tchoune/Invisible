@@ -53,7 +53,7 @@ let oldtextIdentite = identite.innerHTML
 document.querySelector('.reveal-2').addEventListener("mouseover", () => {
 
     console.log("test1")
-    document.querySelector('.services__content__text').style.display = 'flex';
+    document.querySelector('.reveal-2 > .services__content__text').style.display = 'flex';
 
     document.querySelector('.reveal-2').addEventListener("click", () => {
 
@@ -88,16 +88,25 @@ let onChangePrint = true
 let print = document.querySelector(".print2")
 let oldtextPrint = print.innerHTML
 
-document.querySelector('.reveal-3').addEventListener("click", () => {
-    if(onChangePrint){
-        print.innerHTML = oldtextPrint
-    }else{
-        print.innerHTML ="<ul><li>CARTE DE VISITE</li><li>FLYERS</li> <li>PAPIER À LETTRE</li> <li>GOODIES</li> <li>BÂCHE PUBLICITAIRE</li></ul>"
-    }
-    onChangePrint = !onChangePrint
+document.querySelector('.reveal-2').addEventListener("mouseover", () => {
 
+    console.log("test1")
+    document.querySelector('.reveal-2 > .services__content__text').style.display = 'flex';
+
+    document.querySelector('.reveal-3').addEventListener("click", () => {
+        if(onChangePrint){
+            print.innerHTML = oldtextPrint
+        }else{
+            print.innerHTML ="<ul><li>CARTE DE VISITE</li><li>FLYERS</li> <li>PAPIER À LETTRE</li> <li>GOODIES</li> <li>BÂCHE PUBLICITAIRE</li></ul>"
+        }
+        onChangePrint = !onChangePrint
+
+    })
 })
+
 document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
+    document.querySelector('.services__content__text').style.display = 'none';
+
     print.innerHTML = oldtextPrint
     onChangePrint = false
 })
