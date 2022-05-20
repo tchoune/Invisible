@@ -26,9 +26,6 @@ window.showMenuMobile = () =>{
 window.scrollToForm = (id) => {
     id.scrollIntoView({behavior: 'smooth'});
 }
-
-
-
  
 window.addEventListener("DOMContentLoaded", () => {
     const oeil = document.querySelector(".onLoad");
@@ -40,161 +37,142 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-   
-    /*Text au survol des images*/
-    let onChangeIdentite = true
-    let identite = document.querySelector(".identite2")
-    let oldtextIdentite = identite.innerHTML
-    let nbClickidentite = 1
-    let isShowIdentitie = false
+
+/*********************IDENTITE SERVICES*******************/
+let identite = document.querySelector(".identite2")
+let oldtextIdentite = identite.innerHTML
+let nbClickidentite = window.innerWidth > 900 ? 1 : 0
+let isShowIdentitie = false
 
 
-    document.querySelector('.reveal-2').addEventListener("mouseover", () => {
-        if(window.innerWidth > 900 && !isShowIdentitie) {
-            isShowIdentitie = true
-            document.querySelector('.identite_cards__text').style.display = 'flex';
-        }
-    })
+document.querySelector('.reveal-2').addEventListener("mouseover", () => {
+    if(window.innerWidth > 900 && !isShowIdentitie) {
+        isShowIdentitie = true
+        document.querySelector('.identite_cards__text').style.display = 'flex';
+    }
+})
 
-    document.querySelector('.reveal-2').addEventListener("mouseleave", () => {
-        if(window.innerWidth > 900 && isShowIdentitie) {
-            isShowIdentitie = false
-            document.querySelector('.identite_cards__text').style.display = 'none';
-        }
-    })
-
-    document.querySelector('.reveal-2').addEventListener("click", () => {
-        if (nbClickidentite === 2){
-    
-            identite.innerHTML = oldtextIdentite
-            document.querySelector('.identite_cards__text').style.display = 'none';
-            nbClickidentite = 0;
-        }
-
-        else{
-
-            document.querySelector('.identite_cards__text').style.display = 'flex';
-            if (nbClickidentite === 0){
-                console.log("TEst3", nbClickidentite)
-
-                identite.innerHTML = oldtextIdentite
-            }
-    
-            else if (nbClickidentite === 1){
-                console.log("TEst4", nbClickidentite)
-
-                identite.innerHTML ="<ul><li>MODÉLISATION 3D</li><li>MOTION DESIGN</li> <li>DÉVELOPPEMENT WEB</li> <li>WEB DESIGN</li> <li>CAMPAGNE DIGITALE</li><li>RÉSEAUX SOCIAUX</li></ul>"
-            }
-            nbClickidentite++;
-            console.log(nbClickidentite)
-        }
-        onChangeIdentite = !onChangeIdentite
-    })
-
-
-   
-
-
-    let onChangePrint = true
-    let print = document.querySelector(".print2")
-    let oldtextPrint = print.innerHTML
-    let nbClickPrint = 0
-    let isShowPrint = false
-
-
-    document.querySelector('.reveal-3').addEventListener("mouseover", () => {
-        if(window.innerWidth > 900 && !isShowPrint) {
-            isShowPrint = true
-            document.querySelector('.print_cards__text').style.display = 'flex';
-        }
-    })
-    document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
-        if(window.innerWidth > 900 && isShowPrint) {
-            isShowPrint = false
-            document.querySelector('.print_cards__text').style.display = 'none';
-        }
-    })
-
-    document.querySelector('.reveal-3').addEventListener("click", () => {
-
-
-        if (nbClickPrint === 2){
-    
-            identite.innerHTML = oldtextPrint
-            document.querySelector('.print_cards__text').style.display = 'none';
-            nbClickPrint = 1;
-        }
-
-        else{
-
-            document.querySelector('.print_cards__text').style.display = 'flex';
-            if (nbClickPrint === 0){
-
-                print.innerHTML = oldtextPrint
-            }
-    
-            else if (nbClickPrint === 1){
-                print.innerHTML ="<ul><li>CARTE DE VISITE</li><li>FLYERS</li> <li>PAPIER À LETTRE</li> <li>GOODIES</li> <li>BÂCHE PUBLICITAIRE</li></ul>"
-            }
-            nbClickPrint++;
-        }
-    })
-
-
-
-
-
-
-
-
-
-
-    let onChangeDigital = true
-    let digital = document.querySelector(".digital2")
-    let oldtextDigital = digital.innerHTML
-    let nbClickDigital = 0
-    let isShowDigital = false
-
-
-    document.querySelector('.reveal-4').addEventListener("mouseover", () => {
-        if(window.innerWidth > 900) {
-            digital.innerHTML = onChangeDigital
-            document.querySelector('.digital_cards__text').style.display = 'flex';
-            onChangeDigital = false
-
-        }
-    })
-
-
-
-
-    document.querySelector('.reveal-4').addEventListener("click", () => {   
-         if( nbClickDigital === 2){
-            document.querySelector('.digital_cards__text').style.display = 'none';
-            nbClickDigital = 0;
-        }
-        else{
-            if(onChangeDigital){
-                document.querySelector('.digital_cards__text').style.display = 'flex';
-                digital.innerHTML = oldtextDigital
-    
-            }else{
-                document.querySelector('.digital_cards__text').style.display = 'flex';
-                digital.innerHTML ="<ul><li>LOGO</li><li>CHARTE GRAPHIQUE</li> <li>STRATÉGIE MARKETING</li> <li>STORY-TELLING</li></ul>" 
-            }
-            nbClickDigital++;
-        }
+document.querySelector('.reveal-2').addEventListener("mouseleave", () => {
+    if(window.innerWidth > 900 && isShowIdentitie) {
+        isShowIdentitie = false
+        document.querySelector('.identite_cards__text').style.display = 'none';
         
-        onChangeDigital = !onChangeDigital
-    })
+        if(nbClickidentite === 0) nbClickidentite = 1
+    }
+})
 
-    document.querySelector('.reveal-4').addEventListener("mouseleave", () => {
+document.querySelector('.reveal-2').addEventListener("click", () => {
 
+    if (nbClickidentite === 2){
+        document.querySelector('.identite_cards__text').style.display = 'none';
+        identite.innerHTML = oldtextIdentite
+        nbClickidentite = 0;
+    }
+    else{
+
+        document.querySelector('.identite_cards__text').style.display = 'flex';
+        if (nbClickidentite === 0){
+            identite.innerHTML = oldtextIdentite
+        }
+
+        else if (nbClickidentite === 1){
+            identite.innerHTML ="<ul><li>MODÉLISATION 3D</li><li>MOTION DESIGN</li> <li>DÉVELOPPEMENT WEB</li> <li>WEB DESIGN</li> <li>CAMPAGNE DIGITALE</li><li>RÉSEAUX SOCIAUX</li></ul>"
+        }
+        nbClickidentite++;
+    }
+})
+
+/***************************PRINT SERVICES ********************* */
+let print = document.querySelector(".print2")
+let oldtextPrint = print.innerHTML
+let nbClickPrint = 0
+let isShowPrint = false
+
+
+document.querySelector('.reveal-3').addEventListener("mouseover", () => {
+    if(window.innerWidth > 900 && !isShowPrint) {
+        isShowPrint = true
+        document.querySelector('.print_cards__text').style.display = 'flex';
+    }
+})
+document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
+    if(window.innerWidth > 900 && isShowPrint) {
+        isShowPrint = false
+        document.querySelector('.print_cards__text').style.display = 'none';
+        
+        if(nbClickPrint === 0) nbClickPrint = 1
+    }
+})
+
+document.querySelector('.reveal-3').addEventListener("click", () => {
+
+    if (nbClickPrint === 2){
+        document.querySelector('.print_cards__text').style.display = 'none';
+        print.innerHTML = oldtextPrint
+        nbClickPrint = 0;
+    }
+    else{
+        document.querySelector('.print_cards__text').style.display = 'flex';
+        if (nbClickPrint === 0){
+            print.innerHTML = oldtextPrint
+        }
+
+        else if (nbClickPrint === 1){
+            print.innerHTML ="<ul><li>CARTE DE VISITE</li><li>FLYERS</li> <li>PAPIER À LETTRE</li> <li>GOODIES</li> <li>BÂCHE PUBLICITAIRE</li></ul>"
+        }
+
+        nbClickPrint++;
+    }
+})
+
+
+/***********************DIGITALE SERVICES *********************/
+let digital = document.querySelector(".digital2")
+let oldtextDigital = digital.innerHTML
+let nbClickDigital = 0
+let isShowDigital = false
+
+
+document.querySelector('.reveal-4').addEventListener("mouseover", () => {
+
+    if(window.innerWidth > 900 && !isShowDigital) {
+        isShowDigital = true
+        document.querySelector('.digital_cards__text').style.display = 'flex';
+    }
+})
+
+document.querySelector('.reveal-4').addEventListener("mouseleave", () => {
+    if(window.innerWidth > 900 && isShowDigital) {
+        isShowDigital = false
         document.querySelector('.digital_cards__text').style.display = 'none';
+        
+        if(nbClickDigital === 0) nbClickDigital = 1
+    }
+})
 
+
+
+document.querySelector('.reveal-4').addEventListener("click", () => {   
+
+    if (nbClickDigital === 2){
+        document.querySelector('.digital_cards__text').style.display = 'none';
         digital.innerHTML = oldtextDigital
-        onChangeDigital = false
-    })
+        nbClickDigital = 0;
+    }
+    else{
+        document.querySelector('.digital_cards__text').style.display = 'flex';
+        if (nbClickDigital === 0){
+            digital.innerHTML = oldtextDigital
+        }
+
+        else if (nbClickDigital === 1){
+            digital.innerHTML ="<ul><li>LOGO</li><li>CHARTE GRAPHIQUE</li> <li>STRATÉGIE MARKETING</li> <li>STORY-TELLING</li></ul>"            
+        }
+        nbClickDigital++;
+    }
+})
+
+
 
 
 
