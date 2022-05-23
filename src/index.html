@@ -4,24 +4,24 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-        <link rel="shortcut icon" href="./images/oeil.png" type="image/x-icon">k
+        <link rel="shortcut icon" href="./images/oeil.png" type="image/x-icon">
         <title><%= htmlWebpackPlugin.options.title %></title>
     </head>
 
-    <!--<div class="test">
-    
-    </div>-->
-
-<!-- Ajouter le hover uniquement quand on est à plus de 900px 
-
--> mettre en place l'event 
--->
-
     <body>
-
-        <div class="onLoad">
-            &nbsp;
+        <div class="social-bottom">
+            <ul class="social-bottom__list">
+                <li><a href="#" alt="instagram">Instagram</a></li>
+                <li><a href="#" alt="facebook">Facebook</a></li>
+                <li><a href="#" alt="linkedin">Linkedin</a></li>
+                <li><a href="mailto:info@invisblecom.ch" alt="email">Email</a></li>
+            </ul>
         </div>
+
+        <!--<div class="onLoad">
+            &nbsp;
+        </div>-->
+    
 
     <!-- NAVBAR -->
     <div class="nav-icone" onclick="showMenuMobile()"><img src="images/menu/oeil.png" width="35" height="35"/></div>
@@ -49,6 +49,7 @@
         </div>
            
     </header>
+    
 
     <main>
         <section class="about reveal-1" id="agence">
@@ -152,7 +153,7 @@
         <section class="contact" id="contact">
             <div>
                 <h2>RENCONTRONS-NOUS ENTRE 4 YEUX !</h2>
-                <span><a href="mailto:info@invisiblecom.ch" alt="Envoyer une email de contact à Invivisble">INFO@INVISIBLECOM.CH</a></span>
+                <a href="mailto:info@invisiblecom.ch" alt="Envoyer une email de contact à Invivisble">INFO@INVISIBLECOM.CH</a>
             </div>
         </section>
     </main>

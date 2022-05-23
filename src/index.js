@@ -1,6 +1,8 @@
 import './style/_settings.scss'
 import ScrollReveal from 'scrollreveal'
 
+ScrollReveal().reveal('.social-bottom', {delay : 5000, duration: 800, opacity: 0.0 });
+
 ScrollReveal().reveal('.home-title', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
 ScrollReveal().reveal('.subTitle', {delay : 2500, duration: 1000, opacity: 0.0, viewFactor:0.2 });
 ScrollReveal().reveal('.about', {duration: 4000, opacity: 0.0, viewFactor:0.2 });
@@ -14,8 +16,6 @@ ScrollReveal().reveal('.portrait1 p', { delay: 600, origin: 'left',distance:'200
 
 ScrollReveal().reveal('.portrait2', { delay: 600, origin: 'right',distance:'200%', desktop: false });
 ScrollReveal().reveal('.portrait2 p', { delay: 700, origin: 'right',distance:'200%', desktop: false });
-
-console.log(window.innerWidth )
 
 window.showMenuMobile = () =>{
     const nav = document.querySelector("nav")
@@ -83,7 +83,7 @@ document.querySelector('.reveal-2').addEventListener("click", () => {
         }
 
         else if (nbClickidentite === 1){
-            identite.innerHTML ="<ul><li>MODÉLISATION 3D</li><li>MOTION DESIGN</li> <li>DÉVELOPPEMENT WEB</li> <li>WEB DESIGN</li> <li>CAMPAGNE DIGITALE</li><li>RÉSEAUX SOCIAUX</li></ul>"
+            identite.innerHTML ="<ul><li>LOGO</li><li>CHARTE GRAPHIQUE</li> <li>STRATÉGIE MARKETING</li> <li>STORY-TELLING</li></ul>"
         }
         nbClickidentite++;
     }
@@ -182,7 +182,8 @@ document.querySelector('.reveal-4').addEventListener("click", () => {
         }
 
         else if (nbClickDigital === 1){
-            digital.innerHTML ="<ul><li>LOGO</li><li>CHARTE GRAPHIQUE</li> <li>STRATÉGIE MARKETING</li> <li>STORY-TELLING</li></ul>"            
+            
+            digital.innerHTML ="<ul><li>MODÉLISATION 3D</li><li>MOTION DESIGN</li> <li>DÉVELOPPEMENT WEB</li> <li>WEB DESIGN</li> <li>CAMPAGNE DIGITALE</li><li>RÉSEAUX SOCIAUX</li></ul>"           
         }
         nbClickDigital++;
     }
