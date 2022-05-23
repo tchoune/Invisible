@@ -82,6 +82,16 @@ document.querySelector('.reveal-2').addEventListener("click", () => {
     }
 })
 
+
+
+
+/********************** funtion ************************** */
+
+ const displayCards = (id, state) => {
+     document.querySelector(id).style.display = state
+ }
+
+
 /***************************PRINT SERVICES ********************* */
 let print = document.querySelector(".print2")
 let oldtextPrint = print.innerHTML
@@ -92,13 +102,13 @@ let isShowPrint = false
 document.querySelector('.reveal-3').addEventListener("mouseover", () => {
     if(window.innerWidth > 900 && !isShowPrint) {
         isShowPrint = true
-        document.querySelector('.print_cards__text').style.display = 'flex';
+        displayCards('.print_cards__text', 'flex')
     }
 })
 document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
     if(window.innerWidth > 900 && isShowPrint) {
         isShowPrint = false
-        document.querySelector('.print_cards__text').style.display = 'none';
+        displayCards('.print_cards__text', 'none')
         
         if(nbClickPrint === 0) nbClickPrint = 1
     }
@@ -107,12 +117,12 @@ document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
 document.querySelector('.reveal-3').addEventListener("click", () => {
 
     if (nbClickPrint === 2){
-        document.querySelector('.print_cards__text').style.display = 'none';
+        displayCards('.print_cards__text', 'none')
         print.innerHTML = oldtextPrint
         nbClickPrint = 0;
     }
     else{
-        document.querySelector('.print_cards__text').style.display = 'flex';
+        displayCards('.print_cards__text', 'flex')
         if (nbClickPrint === 0){
             print.innerHTML = oldtextPrint
         }
@@ -137,15 +147,14 @@ document.querySelector('.reveal-4').addEventListener("mouseover", () => {
 
     if(window.innerWidth > 900 && !isShowDigital) {
         isShowDigital = true
-        document.querySelector('.digital_cards__text').style.display = 'flex';
+        displayCards('.digital_cards__text', 'flex')
     }
 })
 
 document.querySelector('.reveal-4').addEventListener("mouseleave", () => {
     if(window.innerWidth > 900 && isShowDigital) {
         isShowDigital = false
-        document.querySelector('.digital_cards__text').style.display = 'none';
-        
+        displayCards('.digital_cards__text', 'none')        
         if(nbClickDigital === 0) nbClickDigital = 1
     }
 })
@@ -155,12 +164,12 @@ document.querySelector('.reveal-4').addEventListener("mouseleave", () => {
 document.querySelector('.reveal-4').addEventListener("click", () => {   
 
     if (nbClickDigital === 2){
-        document.querySelector('.digital_cards__text').style.display = 'none';
+        displayCards('.digital_cards__text', 'none')
         digital.innerHTML = oldtextDigital
         nbClickDigital = 0;
     }
     else{
-        document.querySelector('.digital_cards__text').style.display = 'flex';
+        displayCards('.digital_cards__text', 'flex')
         if (nbClickDigital === 0){
             digital.innerHTML = oldtextDigital
         }
