@@ -9,6 +9,13 @@ ScrollReveal().reveal('.reveal-3',{ delay: 400, origin: 'right', distance:'150%'
 ScrollReveal().reveal('.reveal-4', { delay: 500, origin: 'bottom',distance:'150%' });
 
 
+ScrollReveal().reveal('.portrait1', { delay: 500, origin: 'left',distance:'200%', desktop: false});
+ScrollReveal().reveal('.portrait1 p', { delay: 600, origin: 'left',distance:'200%', desktop: false });
+
+ScrollReveal().reveal('.portrait2', { delay: 600, origin: 'right',distance:'200%', desktop: false });
+ScrollReveal().reveal('.portrait2 p', { delay: 700, origin: 'right',distance:'200%', desktop: false });
+
+console.log(window.innerWidth )
 
 window.showMenuMobile = () =>{
     const nav = document.querySelector("nav")

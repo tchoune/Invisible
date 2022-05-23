@@ -510,13 +510,13 @@ header{
     background: $bg-teams;
 
     .portrait{
-
         display : flex;
         flex-direction: column;
         gap: 15px;
         align-items: center;
 
         & div{
+            width: 100%;
             position: relative;
 
             & img {
@@ -524,15 +524,14 @@ header{
                 cursor: pointer;
             }
 
-            & .portrait_name{
-                display: none;
-            }
+            
 
-            &:hover .portrait_name{
+            .portrait_name{
                 display: flex;
                 justify-content: flex-end;
                 position: absolute;
     
+                padding-top : 2vh;
                 bottom : 0;
                 width: 100%;
                 height: 15vh;
@@ -808,10 +807,23 @@ footer {
 
     .teams{
         justify-content: center;
+
         .portrait{
             width: 1080px;
             flex-direction: row;
             justify-content: center;
+
+            & .portrait_name{
+                display: none !important;
+            }
+
+
+            & div:hover .portrait_name{
+                display: flex !important;
+                & p{
+                    font-size: 28px !important;
+                }
+            }
 
             & img{
                 width: 49.3%;
