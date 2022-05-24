@@ -95,10 +95,9 @@
         
         width: 100%;
         padding : 0 36px;
-
-        font-family: futura-pt-bold;
         font-size: 3.3vw;
         hyphens: auto;
+        font-weight: 400;
 
 
         & ul {
@@ -108,20 +107,40 @@
             align-items: center;
             justify-content: space-evenly;
             height: 100%;
+            font-family: futura-pt-bold;
             
             
         }
     }
 
-    &__action {
-        display : none;
+    .services__items:nth-child(1) &__action{
+        color : #CD6D69;
+        bottom: 1.7%;
+        right: 4.8%;
+    }
+    .services__items:nth-child(2) &__action{
+        left : 2%;
+        bottom : 1.5%;
+        color : #dcd076;
+    }
+    .services__items:nth-child(3) &__action{
+        color : #7BC6F0;
+        bottom: 1.5%;
+        right: 3.7%;
+    }
+    
+    &__action{
+        display: flex;
+        position: absolute;
+        font-family: futura-pt-bold;
+        font-size:4vw;
     }
 }
 
 
 
 
-@media screen and (min-width : 900px) {
+@media screen and (min-width : 960px) {
 
     .services{
         margin-top : 15vh; 
@@ -176,20 +195,20 @@
             }   
             .services__items:nth-child(3){
                 justify-content: center;
-                width: 97.5%;
+                width: 100%;
 
                 & .serviceCards{
-                    position: relative;
+                    width: 37%;
                     justify-content: center;
-                    margin-left : 31%;
+                    margin-left: 28.9%;
 
                     &__image{
-                        max-width: 52%;
+                        max-width: 100%;
                     }
                 }
 
                 .serviceCards__content{
-                    width: 35.7%;
+                    width: 37%;
                     left: initial;
                     right: 18%;
                 }
@@ -197,8 +216,8 @@
         }
     }
     .serviceCards__title{
-        font-size: 1.5vw;
-        letter-spacing: 7px ;
+        font-size: 85%;
+        letter-spacing: 7px;
     }
 
     .serviceCards__content__text{
@@ -208,15 +227,13 @@
     }
 
     .serviceCards__content__action{
-        display: flex;
-        position: absolute;
-        bottom: 3%;
-        right: 5%;
+        font-size:2vw;
+        font-weight: 700;
     }
 }
 
 @media screen and (min-width : 1200px) {
     .serviceCards__content__text{
-        width: 77%;
+        width: 80%;
     }
 }

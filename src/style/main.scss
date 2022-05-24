@@ -62,20 +62,24 @@ p{
     display: block;
     position: fixed;
     width: 100px;
-    height: 100px;
+    height: 150px;
     z-index: 10;
     background: rgba(255, 255, 255, 0.445);
     bottom : 4%;
     left: 1%;
     border-radius: 5%;
+    
 
     &__list{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         list-style-type: none;
         height: 100%;
+        width: 100%;
+        padding-left : 15px;
+        gap:15px;
         & li a{
             text-decoration: none;
             color :rgb(0, 0, 0)
@@ -130,7 +134,7 @@ nav{
             justify-content: center;
             & a{
                 text-decoration: none;
-                font-size: 2vw;
+                
                 color : #fff;
                 font-family: Futura-pt;
                 font-weight: 500;
@@ -512,6 +516,14 @@ footer {
 /*************** FULL SCREEN RESPONSIVE *****************/
 @media screen and (min-width : 900px) {
 
+    .social-bottom__list{
+        padding-left : 1vw;
+
+    }
+
+    .nav__link{
+        font-size: 2vw;
+    }
     
     .about{
         background-color: $bg-presentation-web;
