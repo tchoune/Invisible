@@ -17,8 +17,39 @@ ScrollReveal().reveal('.portrait1 p', { delay: 600, origin: 'left',distance:'200
 ScrollReveal().reveal('.portrait2', { delay: 600, origin: 'right',distance:'200%', desktop: false });
 ScrollReveal().reveal('.portrait2 p', { delay: 700, origin: 'right',distance:'200%', desktop: false });
 
+
+
+/*Menu avec clic en exté pour le fermer*/
+
+const nav = document.querySelector(".nav")
+const navManage = () =>{
+    if(nav.style.display  === "flex"){
+        closeNav()
+    }else{
+
+        openNav()
+    }
+}
+const openNav = () =>{
+    nav.style.display = "flex";
+    nav.classList.add("nav-responsive");
+}
+const closeNav = () =>{
+    nav.style.display = "none";
+    nav.classList.remove("nav-responsive");
+}
+
+document.querySelector('.nav-icone').addEventListener("click", () => {
+    navManage()
+})
+
+document.querySelector('main').addEventListener("click", () => {
+    closeNav()
+})
+
+
+/*
 window.showMenuMobile = () =>{
-    const nav = document.querySelector("nav")
     if(nav.style.display  === "flex"){
         nav.style.display = "none";
         nav.classList.remove("nav-responsive");
@@ -27,11 +58,12 @@ window.showMenuMobile = () =>{
         nav.style.display = "flex";
         nav.classList.add("nav-responsive");
     }
-}
+}*/
 
 
 window.scrollToForm = (id) => {
     id.scrollIntoView({behavior: 'smooth'});
+    closeNav()
 }
  
 window.addEventListener("DOMContentLoaded", () => {
