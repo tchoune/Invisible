@@ -44,6 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
+/********************** funtion ************************** */
+
+const displayCards = (id, state) => {
+    document.getElementById(id).style.display = state
+}
+
+
 
 /*********************IDENTITE SERVICES*******************/
 let identite = document.querySelector(".identite2")
@@ -55,14 +62,14 @@ let isShowIdentitie = false
 document.querySelector('.reveal-2').addEventListener("mouseover", () => {
     if(window.innerWidth > 900 && !isShowIdentitie) {
         isShowIdentitie = true
-        document.querySelector('.identite_cards__text').style.display = 'flex';
+        displayCards('identite_cards', "flex")
     }
 })
 
 document.querySelector('.reveal-2').addEventListener("mouseleave", () => {
     if(window.innerWidth > 900 && isShowIdentitie) {
         isShowIdentitie = false
-        document.querySelector('.identite_cards__text').style.display = 'none';
+        displayCards('identite_cards', "none");
         
         if(nbClickidentite === 0) nbClickidentite = 1
     }
@@ -71,13 +78,13 @@ document.querySelector('.reveal-2').addEventListener("mouseleave", () => {
 document.querySelector('.reveal-2').addEventListener("click", () => {
 
     if (nbClickidentite === 2){
-        document.querySelector('.identite_cards__text').style.display = 'none';
+        displayCards('identite_cards', 'none')
         identite.innerHTML = oldtextIdentite
         nbClickidentite = 0;
     }
     else{
 
-        document.querySelector('.identite_cards__text').style.display = 'flex';
+        displayCards('identite_cards', 'flex')
         if (nbClickidentite === 0){
             identite.innerHTML = oldtextIdentite
         }
@@ -90,15 +97,6 @@ document.querySelector('.reveal-2').addEventListener("click", () => {
 })
 
 
-
-
-/********************** funtion ************************** */
-
- const displayCards = (id, state) => {
-     document.querySelector(id).style.display = state
- }
-
-
 /***************************PRINT SERVICES ********************* */
 let print = document.querySelector(".print2")
 let oldtextPrint = print.innerHTML
@@ -109,13 +107,13 @@ let isShowPrint = false
 document.querySelector('.reveal-3').addEventListener("mouseover", () => {
     if(window.innerWidth > 900 && !isShowPrint) {
         isShowPrint = true
-        displayCards('.print_cards__text', 'flex')
+        displayCards('print_cards', 'flex')
     }
 })
 document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
     if(window.innerWidth > 900 && isShowPrint) {
         isShowPrint = false
-        displayCards('.print_cards__text', 'none')
+        displayCards('print_cards', 'none')
         
         if(nbClickPrint === 0) nbClickPrint = 1
     }
@@ -124,12 +122,12 @@ document.querySelector('.reveal-3').addEventListener("mouseleave", () => {
 document.querySelector('.reveal-3').addEventListener("click", () => {
 
     if (nbClickPrint === 2){
-        displayCards('.print_cards__text', 'none')
+        displayCards('print_cards', 'none')
         print.innerHTML = oldtextPrint
         nbClickPrint = 0;
     }
     else{
-        displayCards('.print_cards__text', 'flex')
+        displayCards('print_cards', 'flex')
         if (nbClickPrint === 0){
             print.innerHTML = oldtextPrint
         }
@@ -154,14 +152,14 @@ document.querySelector('.reveal-4').addEventListener("mouseover", () => {
 
     if(window.innerWidth > 900 && !isShowDigital) {
         isShowDigital = true
-        displayCards('.digital_cards__text', 'flex')
+        displayCards('digital_cards', 'flex')
     }
 })
 
 document.querySelector('.reveal-4').addEventListener("mouseleave", () => {
     if(window.innerWidth > 900 && isShowDigital) {
         isShowDigital = false
-        displayCards('.digital_cards__text', 'none')        
+        displayCards('digital_cards', 'none')        
         if(nbClickDigital === 0) nbClickDigital = 1
     }
 })
@@ -171,12 +169,12 @@ document.querySelector('.reveal-4').addEventListener("mouseleave", () => {
 document.querySelector('.reveal-4').addEventListener("click", () => {   
 
     if (nbClickDigital === 2){
-        displayCards('.digital_cards__text', 'none')
+        displayCards('digital_cards', 'none')
         digital.innerHTML = oldtextDigital
         nbClickDigital = 0;
     }
     else{
-        displayCards('.digital_cards__text', 'flex')
+        displayCards('digital_cards', 'flex')
         if (nbClickDigital === 0){
             digital.innerHTML = oldtextDigital
         }

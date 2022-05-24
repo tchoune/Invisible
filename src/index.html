@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-        <link rel="shortcut icon" href="./images/oeil.png" type="image/x-icon">
+        <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
         <title><%= htmlWebpackPlugin.options.title %></title>
     </head>
 
@@ -59,50 +59,54 @@
 
         <section class="services" id="services">
 
-            <h1>NOS SERVICES</h1>
+            <h1 class="services__title">NOS SERVICES</h1>
 
-            <div class="services__content">
+            <div class="services__container">
 
-                <div class="services__cols reveal-2">
-                    <div class="identite_cards">
-                        <img src="images/services/Identite-min.jpg" alt="identitié Visuelle" class="servicesIdentitie" id="imgDesktop">
-                        <img src="images/services/identite_mobile.jpg" alt="identitié Visuelle" class="servicesIdentitie" id="imgMobile">
-                        <p>IDENTITÉ VISUELLE</p>
+                <!-- Premier service Identité -->
+                <div class="services__items reveal-2">
+                    <div class="serviceCards" id="identite">
+                        <img src="images/services/Identite-min.jpg" alt="identitié Visuelle" class="serviceCards__image" id="imgDesktop">
+                        <img src="images/services/identite_mobile.jpg" alt="identitié Visuelle" class="serviceCards__image" id="imgMobile">
+                        <p class="serviceCards__title">IDENTITÉ VISUELLE</p>
                     </div>
                 
-                    <div class="identite_cards__text identite">
-                        <p class="services__subtitle__text identite2">Sous un nouveau regard, nous chercherons à développer les aspects visuels de votre entreprise en y intégrant innovation, créativité et fun !</p>
+                    <div class="serviceCards__content" id="identite_cards">
+                        <p class="serviceCards__content__text identite2">Sous un nouveau regard, nous chercherons à développer les aspects visuels de votre entreprise en y intégrant innovation, créativité et fun !</p>
                     </div>
                 </div>
 
-                <div class="services__cols reveal-3">
-                    <div class="print_cards">
-                        <img src="images/services/Print-min.jpg" alt="communication offline" class="servicesPrint" id="imgDesktop">
-                        <img src="images/services/print_mobile.jpg" alt="communication offline" class="servicesPrint" id="imgMobile">
-                        <P>COMMUNICATION OFFLINE</P>
+
+                <!-- Deuxième service Print -->
+                <div class="services__items reveal-3">
+                    <div class="serviceCards" id="print">
+                        <img src="images/services/Print-min.jpg" alt="communication offline" class="serviceCards__image" id="imgDesktop">
+                        <img src="images/services/print_mobile.jpg" alt="communication offline" class="serviceCards__image" id="imgMobile">
+                        <P class="serviceCards__title">COMMUNICATION OFFLINE</P>
                     </div>
                     
-                   <div class="print_cards__text print">
-                        <p class="services__subtitle__text print2">A votre point de vue nous nous adapterons, notre but sera d’accroître votre visibilité en utilisant des supports offlines impactants et sur-mesures.</p>
+                   <div class="serviceCards__content" id="print_cards">
+                        <p class="serviceCards__content__text print2">A votre point de vue nous nous adapterons, notre but sera d’accroître votre visibilité en utilisant des supports offlines impactants et sur-mesures.</p>
                     </div>
                     
                 </div>
 
-                <div class="services__cols reveal-4">
-                    <div class="digital_cards">
-                        <img src="images/services/Digital-min.jpg" alt="communication digitale" class="servicesDigital" id="imgDesktop">
-                        <img src="images/services/digital_mobile.jpg" alt="communication digitale" class="servicesDigital" id="imgMobile">
-                        <p>COMMUNICATION DIGITALE</p>
+                <!-- Troisième service Digitals -->
+                <div class="services__items reveal-4">
+                    <div class="serviceCards" id="digital">
+                        <img src="images/services/Digital-min.jpg" alt="communication digitale" class="serviceCards__image" id="imgDesktop">
+                        <img src="images/services/digital_mobile.jpg" alt="communication digitale" class="serviceCards__image" id="imgMobile">
+                        <p class="serviceCards__title">COMMUNICATION DIGITALE</p>
                     </div>
                     
-                    <div class="digital_cards__text digital">
-                        <p class="services__subtitle__text digital2">Sous un autre angle, à l’ère du digital, nous vous accompagnerons dans toutes les étapes de votre communication numérique à travers les différents canaux.</p>
+                    <div class="serviceCards__content" id="digital_cards">
+                        <p class="serviceCards__content__text digital2">Sous un autre angle, à l’ère du digital, nous vous accompagnerons dans toutes les étapes de votre communication numérique à travers les différents canaux.</p>
                     </div>
                 </div>
-          
-
             </div>
         </section>
+
+
 
         <section class="teams" id="teams">
 
@@ -121,18 +125,15 @@
                     </div>
             </div>
             <div class="teams__content">
-                
-                    <p>
-                        <span class="big">N</span>os chemins se croisent au CEPV école d’art appliqué à Vevey. Après l’obtention commune d’un CFC de polydesigner 3D, l’envie d’acquérir des compétences plus poussées en <span class="big">marketing</span> et <span class="medium">communication visuelle</span>, nous guide à poursuivre la formation supérieur en visual merchandising design. Riche du savoir-faire acquis durant ces huit années d’études et d’une collaboration en <span class="big">binôme</span>, notre carrière professionnelle débute. Chacune de nous exercera un poste à responsabilité en entreprise.
-                    </p>
+                <p>
+                    <span class="big">N</span>os chemins se croisent au CEPV école d’art appliqué à Vevey. Après l’obtention commune d’un CFC de polydesigner 3D, l’envie d’acquérir des compétences plus poussées en <span class="big">marketing</span> et <span class="medium">communication visuelle</span>, nous guide à poursuivre la formation supérieur en visual merchandising design. Riche du savoir-faire acquis durant ces huit années d’études et d’une collaboration en <span class="big">binôme</span>, notre carrière professionnelle débute. Chacune de nous exercera un poste à responsabilité en entreprise.
+                </p>
 
-                    <br><br>
-                    <p>
-                        <span class="small">Kim</span> assimile de nouvelles connaissances dans l’univers du <span class="medium">graphisme</span> et de la gestion de projets visuels. <span class="small">Julie</span> s’oriente dans le monde du luxe et des marques dans une agence d’<span class="medium">événementiel</span> et de retail design.
-                        De par notre esprit innovant, dans l’air du temps, nous avons appris à casser les codes, créer des concepts à <span class="big">360°</span>, surprendre et innover. Aujourd’hui nous passons à l’action en vous faisant découvrir l’agence <span class="big">INVISIBLE</span> qui ne passera pas inaperçu !                        
-                    </p>
-                
-
+                <br><br>
+                <p>
+                    <span class="small">Kim</span> assimile de nouvelles connaissances dans l’univers du <span class="medium">graphisme</span> et de la gestion de projets visuels. <span class="small">Julie</span> s’oriente dans le monde du luxe et des marques dans une agence d’<span class="medium">événementiel</span> et de retail design.
+                    De par notre esprit innovant, dans l’air du temps, nous avons appris à casser les codes, créer des concepts à <span class="big">360°</span>, surprendre et innover. Aujourd’hui nous passons à l’action en vous faisant découvrir l’agence <span class="big">INVISIBLE</span> qui ne passera pas inaperçu !                        
+                </p>
             </div>
                 
         </section>

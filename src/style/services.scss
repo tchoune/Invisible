@@ -1,0 +1,211 @@
+.services{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin : 10vh 0;
+    padding : 0 20px;
+    
+
+    &__title {
+        font-size: 22px;
+        font-family: futura-pt-bold;
+        font-weight: bold;
+        letter-spacing: 5px;
+        padding-bottom : 30px
+    }
+
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+    }  
+
+    &__items {
+        display : flex;
+        position: relative; 
+    }
+}
+
+
+.serviceCards{
+    display : flex;
+    user-select: none;
+
+    &__title{
+        font-family: futura-pt;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding : 10px 7px 0px 7px;
+        letter-spacing: .8px;
+    }
+
+
+    .services__items:nth-child(1) & .serviceCards__image {
+        
+        max-width: 70%;
+    }
+    
+    .services__items:nth-child(2) & .serviceCards__image{
+        max-width: 90%;
+    }
+
+    .services__items:nth-child(3) & .serviceCards__image{
+        max-width: 60%;
+    }
+}
+    
+.serviceCards__content{
+
+    display: none;
+    justify-content: center;
+    position: absolute;
+
+    height: 100%;
+
+    top : 0;
+    left: 0;
+
+    padding : 36px 0;
+
+    .services__items:nth-child(1) & {
+        width: 70%;
+        background-color: #E5847D;
+    }
+
+    .services__items:nth-child(2) & {
+        width: 90%;
+        background-color: #FFF8A8;
+    }
+
+    .services__items:nth-child(3) &{
+        width: 60%;
+        background-color: #CDEFFE;
+    }
+
+
+    &__text{ //p
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+
+        
+        width: 100%;
+        padding : 0 36px;
+
+        font-family: futura-pt-bold;
+        font-size: 3.3vw;
+        hyphens: auto;
+
+
+        & ul {
+            display : flex;
+            flex-direction: column;
+            list-style-type: none;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100%;
+            
+            
+        }
+    }
+}
+
+
+
+
+@media screen and (min-width : 900px) {
+
+    .services{
+        margin-top : 15vh; 
+
+        &__title{
+            padding-left: 8vw;
+            font-size: 35px;
+        }
+        
+        &__container{
+            flex-direction: row;
+            margin : 0 auto;
+            width : 100%;
+
+            .services__items:nth-child(1){
+                width: 45%;
+
+                & .serviceCards{
+                    flex-direction: row-reverse;
+                    height: fit-content;
+
+                    &__image{
+                        max-width: 75%;
+                    }
+                }
+
+                & .serviceCards__content{
+                    width: 75%;
+                    right: 0;
+                    left : initial;
+                }
+            } 
+            .services__items:nth-child(2){
+                width: 51%;
+                
+                & .serviceCards{
+                    align-items: flex-end;
+
+                    &__image{
+                        max-width: 90%;
+                    }
+                }
+
+                & .serviceCards__content{
+
+                    width: 90%;
+                    height: 64.2%;
+                    top : initial;
+                    bottom : 0;
+                }
+
+            }   
+            .services__items:nth-child(3){
+                justify-content: center;
+                width: 97.5%;
+
+                & .serviceCards{
+                    position: relative;
+                    justify-content: center;
+                    margin-left : 31%;
+
+                    &__image{
+                        max-width: 52%;
+                    }
+                }
+
+                .serviceCards__content{
+                    width: 35.7%;
+                    left: initial;
+                    right: 18%;
+                }
+            } 
+        }
+    }
+    .serviceCards__title{
+        font-size: 1.5vw;
+        letter-spacing: 7px ;
+    }
+
+    .serviceCards__content__text{
+        font-size: 2.2vw;
+        width: 75%;
+        padding: initial;
+    }
+}
+
+@media screen and (min-width : 1200px) {
+    .serviceCards__content__text{
+        width: 77%;
+    }
+}
