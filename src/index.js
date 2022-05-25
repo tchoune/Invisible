@@ -1,6 +1,29 @@
 import './style/_settings.scss'
 import ScrollReveal from 'scrollreveal'
 
+const UnCryptMailto = ( s ) =>
+    {
+        var n = 0;
+        var r = "";
+        for( var i = 0; i < s.length; i++)
+        {
+            n = s.charCodeAt( i );
+            if( n >= 8364 )
+            {
+                n = 128;
+            }
+            r += String.fromCharCode( n - 1 );
+        }
+        return r;
+    }
+
+window.linkTo_UnCryptMailto = ( s ) =>
+{
+    location.href=UnCryptMailto( s );
+}
+
+
+
 ScrollReveal().reveal('.social-bottom', {delay : 5000, duration: 800, opacity: 0.0 });
 
 ScrollReveal().reveal('.home-title', {delay : 2000, duration: 3000, opacity: 0.0, viewFactor:0.2 });
